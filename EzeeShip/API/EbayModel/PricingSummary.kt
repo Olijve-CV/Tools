@@ -16,8 +16,8 @@ class PricingSummary {
     @JsonProperty(value = JsonConstants.ADJUSTMENT)
     val adjustment: Adjustment? = null
     
-    @JsonProperty(value = JsonConstants.DELIVERYCOST_1)
-    val deliveryCost_1: DeliveryCost_1? = null
+    @JsonProperty(value = JsonConstants.DELIVERYCOST)
+    val deliveryCost: DeliveryCost_1? = null
     
     @JsonProperty(value = JsonConstants.DELIVERYDISCOUNT)
     val deliveryDiscount: DeliveryDiscount? = null
@@ -31,8 +31,8 @@ class PricingSummary {
     @JsonProperty(value = JsonConstants.PRICESUBTOTAL)
     val priceSubtotal: PriceSubtotal? = null
     
-    @JsonProperty(value = JsonConstants.TAX_1)
-    val tax_1: Tax_1? = null
+    @JsonProperty(value = JsonConstants.TAX)
+    val tax: Tax_1? = null
     
     @JsonProperty(value = JsonConstants.TOTAL)
     val total: Total? = null

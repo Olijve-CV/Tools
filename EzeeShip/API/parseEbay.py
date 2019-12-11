@@ -49,7 +49,8 @@ class DataObj(object):
         return ""
         
     def getVariableName(self):
-        
+        if getattr(self, "originName", None):
+            return self.originName
         return self.name
         
     def getVariableType(self):
@@ -112,6 +113,9 @@ class %s {
         attrlst = [obj.getCode() for _, obj in self.attributes.items()]
         
         return "\n    ".join(attrlst)
+        
+    def getUpperVaribale(self):
+        return self.originName.upper()
     
 class ListObj(DataObj):
     def setChildObj(self, obj):
@@ -130,6 +134,7 @@ def TryRenameObj(dictObj):
 
     global gdTypeObj
     name = dictObj.name
+    dictObj.originName = name
     while True:
         if name in gdTypeObj and set(dictObj.attributes.keys()) != set(gdTypeObj[name].attributes.keys()):
             if name[-1].isdigit():
