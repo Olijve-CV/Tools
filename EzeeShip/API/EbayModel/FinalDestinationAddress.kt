@@ -23,7 +23,7 @@ class FinalDestinationAddress {
     val city: String? = null
     
     @JsonProperty(value = JsonConstants.COUNTRYCODE)
-    val countryCode: Int? = null
+    val countryCode: String? = null
     
     @JsonProperty(value = JsonConstants.COUNTY)
     val county: String? = null

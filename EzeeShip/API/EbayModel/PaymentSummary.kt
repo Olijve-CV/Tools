@@ -13,11 +13,11 @@ import java.util.Date
 class PaymentSummary {
  
     
-    @JsonProperty(value = JsonConstants.PAYMENT)
+    @JsonProperty(value = JsonConstants.PAYMENTS)
     val paymentList: List<Payment>? = null
     
-    @JsonProperty(value = JsonConstants.REFUND)
-    val refundList: List<Refund>? = null
+    @JsonProperty(value = JsonConstants.REFUNDS)
+    val refundList: List<Refund_1>? = null
     
     @JsonProperty(value = JsonConstants.TOTALDUESELLER)
     val totalDueSeller: TotalDueSeller? = null

@@ -14,13 +14,13 @@ class ShippingCost {
  
     
     @JsonProperty(value = JsonConstants.CONVERTEDFROMCURRENCY)
-    val convertedFromCurrency: Int? = null
+    val convertedFromCurrency: String? = null
     
     @JsonProperty(value = JsonConstants.CONVERTEDFROMVALUE)
     val convertedFromValue: String? = null
     
     @JsonProperty(value = JsonConstants.CURRENCY)
-    val currency: Int? = null
+    val currency: String? = null
     
     @JsonProperty(value = JsonConstants.VALUE)
     val value: BigDecimal? = null

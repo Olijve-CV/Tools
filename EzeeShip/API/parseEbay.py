@@ -36,13 +36,11 @@ class DataObj(object):
         self.name = name
         self.obj = obj
         self.attributes = {}
-        global gdConst
-        gdConst.add(name)
+        RegisterConstName(name)
     
     def put(self, k, v):
         self.attributes[k] = v
-        global gdConst
-        gdConst.add(k)
+        RegisterConstName(k)
         
     def getUpperVaribale(self):
         return self.name.upper()
@@ -86,7 +84,7 @@ class StringObj(DataObj):
 
 class EnumObj(DataObj):
     def getVariableType(self):
-        return "Int"
+        return "String"
     
 class BoolObj(DataObj):
     def getVariableType(self):
@@ -121,27 +119,55 @@ class ListObj(DataObj):
     def getVariableType(self):
         return "List<%s>" % (self.ChildObj.getVariableType())
         
+    def getUpperVaribale(self):
+        return self.originName.upper()
+        
     def getVariableName(self):
         
         return self.name + "List"
-    
-    
+ 
+def TryRenameObj(dictObj):
 
+    global gdTypeObj
+    name = dictObj.name
+    while True:
+        if name in gdTypeObj and set(dictObj.attributes.keys()) != set(gdTypeObj[name].attributes.keys()):
+            if name[-1].isdigit():
+                name = name[:-1] + str(int(name[-1]) + 1)
+            else:
+                name = name + "_1"
+            dictObj.name = name
+        else:
+            break
+            
+def RegisterConstName(name):
+    global gdConst
+    gdConst.add(name)
+            
 def parseData(name, obj):
 
     iType = checkObjType(obj)
     
     if iType == DICT:
         dictObj = DictObj(name, obj)
+
         for k,v in obj.items():
             res = parseData(k, v)
-            dictObj.put(k, res)
-        global gdTypeObj
-        gdTypeObj[name] = dictObj
+            dictObj.put(res.name, res)
+
+        TryRenameObj(dictObj)
+        gdTypeObj[dictObj.name] = dictObj
         return dictObj
     elif iType == LIST:
-        _name = name[:-1] if name.endswith("s") else name
-        listObj = ListObj(_name, None)
+        if name.endswith("es"):
+            _name = name[:-2]
+        elif name.endswith("s"):
+            _name = name[:-1]
+        else:
+            _name = name
+        listObj = ListObj(_name, obj)
+        listObj.originName = name
+        RegisterConstName(name)
         newObj = parseData(_name, obj[0])
         listObj.setChildObj(newObj)
         return listObj
@@ -157,8 +183,9 @@ def parseData(name, obj):
         raise Exception("iType lost: %s"%iType)
 
 relative_path = "./EbayModel/"
-def generateCodeFileByObj(name, obj):
+def generateCodeFileByObj(obj):
 
+    name = obj.name
     writeFile = open("%s%s.kt"%(relative_path, name[0].upper() + name[1:]), "w")
     # 文件头
     writeFile.writelines('''package com.apex.ebay.model
@@ -194,6 +221,6 @@ object JsonConstants {
     
 parseData("OrderList", ebayOrderData.OrderList)
 for name, obj in gdTypeObj.items():
-    generateCodeFileByObj(name, obj)
+    generateCodeFileByObj(obj)
 
 generateConstFile()

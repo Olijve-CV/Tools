@@ -13,17 +13,14 @@ import java.util.Date
 class DeliveryCost {
  
     
-    @JsonProperty(value = JsonConstants.CONVERTEDFROMCURRENCY)
-    val convertedFromCurrency: Int? = null
+    @JsonProperty(value = JsonConstants.IMPORTCHARGES)
+    val importCharges: ImportCharges? = null
     
-    @JsonProperty(value = JsonConstants.CONVERTEDFROMVALUE)
-    val convertedFromValue: String? = null
+    @JsonProperty(value = JsonConstants.SHIPPINGCOST)
+    val shippingCost: ShippingCost? = null
     
-    @JsonProperty(value = JsonConstants.CURRENCY)
-    val currency: Int? = null
-    
-    @JsonProperty(value = JsonConstants.VALUE)
-    val value: BigDecimal? = null
+    @JsonProperty(value = JsonConstants.SHIPPINGINTERMEDIATIONFEE)
+    val shippingIntermediationFee: ShippingIntermediationFee? = null
     
 }
         

@@ -25,7 +25,7 @@ class OrderList {
     @JsonProperty(value = JsonConstants.OFFSET)
     val offset: Int? = null
     
-    @JsonProperty(value = JsonConstants.ORDER)
+    @JsonProperty(value = JsonConstants.ORDERS)
     val orderList: List<Order>? = null
     
     @JsonProperty(value = JsonConstants.PREV)
@@ -34,7 +34,7 @@ class OrderList {
     @JsonProperty(value = JsonConstants.TOTAL)
     val total: Int? = null
     
-    @JsonProperty(value = JsonConstants.WARNING)
+    @JsonProperty(value = JsonConstants.WARNINGS)
     val warningList: List<Warning>? = null
     
 }
