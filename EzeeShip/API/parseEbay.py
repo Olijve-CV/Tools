@@ -91,6 +91,9 @@ class BoolObj(DataObj):
         return "Boolean"
 
 class DictObj(DataObj):
+    def GetClassName(self):
+        return self.name[0].upper() + self.name[1:]
+
     def decodeToKotlinObj(self):
         str = """
 @Data
@@ -99,7 +102,7 @@ class %s {
     %s
     
 }
-        """%(self.name, self.GetAttributeCode())
+        """%(self.GetClassName(), self.GetAttributeCode())
         return str
         
     def getVariableType(self):
@@ -149,16 +152,18 @@ def parseData(name, obj):
 relative_path = "./EbayModel/"
 def GetConstText():
     global gdConst
-    constLst = ["val %s = %s"%(obj.upper(), obj) for obj in gdConst]
-    return "\r\t".join(constLst)
+    constLst = ['const val %s = "%s"'%(obj.upper(), obj) for obj in gdConst]
+    return "\r\n\t".join(constLst)
 
 
 def generateCodeFileByObj(name, obj):
     jsonFile = open("%s%s.kt"%(relative_path, "JsonConstants"), "w")
-    jsonFile.writelines("""package com.apex.shopify.domain
+    jsonFile.writelines("""package com.apex.ebay.model
 
 object JsonConstants {
+
     %s
+    
 }"""%GetConstText())
     jsonFile.close()
 
@@ -168,7 +173,12 @@ object JsonConstants {
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import lombok.Data
-
+import java.math.BigDecimal
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
+import com.fasterxml.jackson.databind.annotation.JsonSerialize
+import com.apex.util.FlexDateDeserializer
+import com.apex.util.FlexDateSerializer
+import java.util.Date
 ''')
     writeFile.writelines(obj.decodeToKotlinObj())
     writeFile.close()
