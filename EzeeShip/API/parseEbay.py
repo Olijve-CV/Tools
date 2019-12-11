@@ -1,0 +1,179 @@
+import ebayOrderData
+
+DICT = 1
+LIST = 2
+ENUM = 3
+BOOLEAN = 4
+STRING = 5
+INT = 6
+
+def checkObjType(obj):
+    if isinstance(obj, dict):
+        return DICT
+    elif isinstance(obj, list):
+        return LIST
+    elif isinstance(obj, str):
+        if " : [" in obj:
+            return ENUM
+        elif "boolean" == obj:
+            return BOOLEAN
+        elif "integer" == obj:
+            return INT
+        elif "string" == obj or "" == obj:
+            return STRING
+    raise Exception("None Type of obj: " + str(obj))
+
+gdTypeObj = {}
+gdConst = set()
+
+class DataObj(object):
+
+    attr_template = """
+    @JsonProperty(value = JsonConstants.%s)%s
+    val %s: %s? = null"""
+    
+    def __init__(self, name="", obj=None):
+        self.name = name
+        self.obj = obj
+        self.attributes = {}
+        global gdConst
+        gdConst.add(name)
+    
+    def put(self, k, v):
+        self.attributes[k] = v
+        
+    def getUpperVaribale(self):
+        return self.name.upper()
+        
+    def getExtraAnnotation(self):
+        return ""
+        
+    def getVariableName(self):
+        return self.name
+        
+    def getVariableType(self):
+        pass
+        
+    def getCode(self):
+        return self.attr_template % (self.getUpperVaribale(), self.getExtraAnnotation(),
+                    self.getVariableName(), self.getVariableType())
+    
+        
+class IntObj(DataObj):
+
+    def getVariableType(self):
+        return "Int"
+    
+class StringObj(DataObj):
+    def getVariableType(self):
+        if self.name.endswith("Date"):
+            return "Date"
+        elif self.name in ("value", ):
+            return "BigDecimal"
+        else:
+            return "String"
+           
+    def getExtraAnnotation(self):
+        if self.name.endswith("Date"):
+            return """
+    @JsonDeserialize(using = FlexDateDeserializer::class)
+    @JsonSerialize(using = FlexDateSerializer::class)"""
+        else:
+            return ""
+
+class EnumObj(DataObj):
+    def getVariableType(self):
+        return "Int"
+    
+class BoolObj(DataObj):
+    def getVariableType(self):
+        return "Boolean"
+
+class DictObj(DataObj):
+    def decodeToKotlinObj(self):
+        str = """
+@Data
+class %s {
+ 
+    %s
+    
+}
+        """%(self.name, self.GetAttributeCode())
+        return str
+        
+    def getVariableType(self):
+        return self.getUpperVaribale()
+        
+    def GetAttributeCode(self):
+        attrlst = [obj.getCode() for _, obj in self.attributes.items()]
+        
+        return "\n    ".join(attrlst)
+    
+class ListObj(DataObj):
+    def setChildObj(self, obj):
+        self.ChildObj = obj
+    def getStr():
+        return "List<%s>" % ("")
+
+def parseData(name, obj):
+
+    iType = checkObjType(obj)
+    
+    if iType == DICT:
+        dictObj = DictObj()
+        for k,v in obj.items():
+            res = parseData(k, v)
+            dictObj.put(k, res)
+        global gdTypeObj
+        if name in gdTypeObj:
+            print("repeate obj", name, obj)
+        gdTypeObj[name] = dictObj
+        return dictObj
+    elif iType == LIST:
+        listObj = ListObj(name)
+        newObj = parseData(name, obj[0])
+        listObj.setChildObj(newObj)
+        return listObj
+    elif iType == INT:
+        return IntObj(name, obj)
+    elif iType == BOOLEAN:
+        return BoolObj(name, obj)
+    elif iType == STRING:
+        return StringObj(name, obj)
+    elif iType == ENUM:
+        return EnumObj(name, obj)
+    else:
+        raise Exception("iType lost: %s"%iType)
+
+relative_path = "./EbayModel/"
+def GetConstText():
+    global gdConst
+    constLst = ["val %s = %s"%(obj.upper(), obj) for obj in gdConst]
+    return "\r\t".join(constLst)
+
+
+def generateCodeFileByObj(name, obj):
+    jsonFile = open("%s%s.kt"%(relative_path, "JsonConstants"), "w")
+    jsonFile.writelines("""package com.apex.shopify.domain
+
+object JsonConstants {
+    %s
+}"""%GetConstText())
+    jsonFile.close()
+
+    writeFile = open("%s%s.kt"%(relative_path, name[0].upper() + name[1:]), "w")
+    # 文件头
+    writeFile.writelines('''package com.apex.ebay.model
+
+import com.fasterxml.jackson.annotation.JsonProperty
+import lombok.Data
+
+''')
+    writeFile.writelines(obj.decodeToKotlinObj())
+    writeFile.close()
+    
+    
+parseData("OrderList", ebayOrderData.OrderList)
+for name, obj in gdTypeObj.items():
+    generateCodeFileByObj(name, obj)
+    
