@@ -49,6 +49,7 @@ class DataObj(object):
         return ""
         
     def getVariableName(self):
+        
         return self.name
         
     def getVariableType(self):
@@ -102,7 +103,7 @@ class %s {
         return str
         
     def getVariableType(self):
-        return self.getUpperVaribale()
+        return self.name[0].upper() + self.name[1:]
         
     def GetAttributeCode(self):
         attrlst = [obj.getCode() for _, obj in self.attributes.items()]
@@ -112,25 +113,25 @@ class %s {
 class ListObj(DataObj):
     def setChildObj(self, obj):
         self.ChildObj = obj
-    def getStr():
-        return "List<%s>" % ("")
+    def getVariableType(self):
+        return "List<%s>" % (self.ChildObj.getVariableType())
+    
+    
 
 def parseData(name, obj):
 
     iType = checkObjType(obj)
     
     if iType == DICT:
-        dictObj = DictObj()
+        dictObj = DictObj(name, obj)
         for k,v in obj.items():
             res = parseData(k, v)
             dictObj.put(k, res)
         global gdTypeObj
-        if name in gdTypeObj:
-            print("repeate obj", name, obj)
         gdTypeObj[name] = dictObj
         return dictObj
     elif iType == LIST:
-        listObj = ListObj(name)
+        listObj = ListObj(name, None)
         newObj = parseData(name, obj[0])
         listObj.setChildObj(newObj)
         return listObj
