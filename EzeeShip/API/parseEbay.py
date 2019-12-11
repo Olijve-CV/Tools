@@ -41,6 +41,8 @@ class DataObj(object):
     
     def put(self, k, v):
         self.attributes[k] = v
+        global gdConst
+        gdConst.add(k)
         
     def getUpperVaribale(self):
         return self.name.upper()
@@ -118,6 +120,10 @@ class ListObj(DataObj):
         self.ChildObj = obj
     def getVariableType(self):
         return "List<%s>" % (self.ChildObj.getVariableType())
+        
+    def getVariableName(self):
+        
+        return self.name + "List"
     
     
 
@@ -134,8 +140,9 @@ def parseData(name, obj):
         gdTypeObj[name] = dictObj
         return dictObj
     elif iType == LIST:
-        listObj = ListObj(name, None)
-        newObj = parseData(name, obj[0])
+        _name = name[:-1] if name.endswith("s") else name
+        listObj = ListObj(_name, None)
+        newObj = parseData(_name, obj[0])
         listObj.setChildObj(newObj)
         return listObj
     elif iType == INT:
@@ -150,22 +157,7 @@ def parseData(name, obj):
         raise Exception("iType lost: %s"%iType)
 
 relative_path = "./EbayModel/"
-def GetConstText():
-    global gdConst
-    constLst = ['const val %s = "%s"'%(obj.upper(), obj) for obj in gdConst]
-    return "\r\n\t".join(constLst)
-
-
 def generateCodeFileByObj(name, obj):
-    jsonFile = open("%s%s.kt"%(relative_path, "JsonConstants"), "w")
-    jsonFile.writelines("""package com.apex.ebay.model
-
-object JsonConstants {
-
-    %s
-    
-}"""%GetConstText())
-    jsonFile.close()
 
     writeFile = open("%s%s.kt"%(relative_path, name[0].upper() + name[1:]), "w")
     # 文件头
@@ -183,8 +175,25 @@ import java.util.Date
     writeFile.writelines(obj.decodeToKotlinObj())
     writeFile.close()
     
+def GetConstText():
+    global gdConst
+    constLst = ['const val %s = "%s"'%(obj.upper(), obj) for obj in gdConst]
+    return "\r\n\t".join(constLst)
+
+def generateConstFile():
+    jsonFile = open("%s%s.kt"%(relative_path, "JsonConstants"), "w")
+    jsonFile.writelines("""package com.apex.ebay.model
+
+object JsonConstants {
+
+    %s
+    
+}"""%GetConstText())
+    jsonFile.close()
+    
     
 parseData("OrderList", ebayOrderData.OrderList)
 for name, obj in gdTypeObj.items():
     generateCodeFileByObj(name, obj)
-    
+
+generateConstFile()

@@ -18,8 +18,8 @@ class CancelStatus {
     @JsonSerialize(using = FlexDateSerializer::class)
     val cancelledDate: Date? = null
     
-    @JsonProperty(value = JsonConstants.CANCELREQUESTS)
-    val cancelRequests: List<CancelRequests>? = null
+    @JsonProperty(value = JsonConstants.CANCELREQUEST)
+    val cancelRequestList: List<CancelRequest>? = null
     
     @JsonProperty(value = JsonConstants.CANCELSTATE)
     val cancelState: Int? = null
