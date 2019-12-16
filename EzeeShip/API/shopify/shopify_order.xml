@@ -1,0 +1,1494 @@
+<table class="api-properties">
+    <tbody>
+        <tr id="app-id-property-2019-10">
+          <td>
+            app_id
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"app_id"</span><span class="o">: </span><span class="mi">1966818</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The ID of the app that created the order.</p>
+          </td>
+        </tr>
+        <tr id="billing-address-property-2019-10">
+          <td>
+            billing_address
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"billing_address"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"address1"</span><span class="o">: </span><span class="s2">"2259 Park Ct"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"address2"</span><span class="o">: </span><span class="s2">"Apartment 5"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"city"</span><span class="o">: </span><span class="s2">"Drayton Valley"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"company"</span><span class="o">: </span><span class="mi">null</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"country"</span><span class="o">: </span><span class="s2">"Canada"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"first_name"</span><span class="o">: </span><span class="s2">"Christopher"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"last_name"</span><span class="o">: </span><span class="s2">"Gorski"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"phone"</span><span class="o">: </span><span class="s2">"(555)555-5555"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"province"</span><span class="o">: </span><span class="s2">"Alberta"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"zip"</span><span class="o">: </span><span class="s2">"T0E 0M0"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"name"</span><span class="o">: </span><span class="s2">"Christopher Gorski"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"province_code"</span><span class="o">: </span><span class="s2">"AB"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"country_code"</span><span class="o">: </span><span class="s2">"CA"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"latitude"</span><span class="o">: </span><span class="s2">"45.41634"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"longitude"</span><span class="o">: </span><span class="s2">"-75.6868"</span><span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>        The mailing address associated with the payment method. This address is an optional field that won't be available on orders that do not require a payment method. It has the following properties:
+            </p>
+<ul>
+              <li>
+<strong>address1</strong>: The street address of the billing address.</li>
+              <li>
+<strong>address2</strong>: An optional additional field for the street address of the billing address.</li>
+              <li>
+<strong>city</strong>: The city, town, or village of the billing address.</li>
+              <li>
+<strong>company</strong>: The company of the person associated with the billing address.</li>
+              <li>
+<strong>country</strong>: The name of the country of the billing address.</li>
+              <li>
+<strong>country_code</strong>: The two-letter code (<a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="_blank">ISO 3166-1</a> format) for the country of the billing address.</li>
+              <li>
+<strong>first_name</strong>: The first name of the person associated with the payment method.</li>
+              <li>
+<strong>last_name</strong>: The last name of the person associated with the payment method.</li>
+              <li>
+<strong>latitude</strong>: The latitude of the billing address.</li>
+              <li>
+<strong>longitude</strong>: The longitude of the billing address.</li>
+              <li>
+<strong>name</strong>: The full name of the person associated with the payment method.</li>
+              <li>
+<strong>phone</strong>: The phone number at the billing address.</li>
+              <li>
+<strong>province</strong>: The name of the region (province, state, prefecture, …) of the billing address.</li>
+              <li>
+<strong>province_code</strong>: The two-letter abbreviation of the region of the billing address.</li>
+              <li>
+<strong>zip</strong>: The postal code (zip, postcode, Eircode, …) of the billing address.</li>
+            </ul>
+
+          </td>
+        </tr>
+        <tr id="browser-ip-property-2019-10">
+          <td>
+            browser_ip
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"browser_ip"</span><span class="o">: </span><span class="s2">"216.191.105.146"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The IP address of the browser used by the customer when they placed the order.</p>
+          </td>
+        </tr>
+        <tr id="buyer-accepts-marketing-property-2019-10">
+          <td>
+            buyer_accepts_marketing
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"buyer_accepts_marketing"</span><span class="o">: </span><span class="mi">false</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          Whether the customer consented to receive email updates from the shop.
+</p>
+          </td>
+        </tr>
+        <tr id="cancel-reason-property-2019-10">
+          <td>
+            cancel_reason
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"cancel_reason"</span><span class="o">: </span><span class="s2">"customer"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>        The reason why the order was canceled. Valid values:
+            </p>
+<ul>
+              <li>
+<strong>customer</strong>: The customer canceled the order.</li>
+              <li>
+<strong>fraud</strong>: The order was fraudulent.</li>
+              <li>
+<strong>inventory</strong>: Items in the order were not in inventory.</li>
+              <li>
+<strong>declined</strong>: The payment was declined.</li>
+              <li>
+<strong>other</strong>: A reason not in this list.</li>
+            </ul>
+
+          </td>
+        </tr>
+        <tr id="cancelled-at-property-2019-10">
+          <td>
+            cancelled_at
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"cancelled_at"</span><span class="o">: </span><span class="mi">null</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The date and time ( <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format) when the order was canceled.</p>
+          </td>
+        </tr>
+        <tr id="cart-token-property-2019-10">
+          <td>
+            cart_token
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"cart_token"</span><span class="o">: </span><span class="s2">"68778783ad298f1c80c3bafcddeea"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The ID of the cart that's associated with the order.</p>
+          </td>
+        </tr>
+        <tr id="client-details-property-2019-10">
+          <td>
+            client_details
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"client_details"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"accept_language"</span><span class="o">: </span><span class="s2">"en-US,en;q=0.9"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"browser_height"</span><span class="o">: </span><span class="mi">1320</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"browser_ip"</span><span class="o">: </span><span class="s2">"216.191.105.146"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"browser_width"</span><span class="o">: </span><span class="mi">1280</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"session_hash"</span><span class="o">: </span><span class="s2">"9ad4d1f4e6a8977b9dd98eed1e477643"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"user_agent"</span><span class="o">: </span><span class="s2">"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"</span><span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          </p>
+<p>Information about the browser that the customer used when they placed their order:</p>
+            <ul>
+              <li>
+<strong>accept_language</strong>: The languages and locales that the browser understands.</li>
+              <li>
+<strong>browser_height</strong>: The browser screen height in pixels, if available.</li>
+              <li>
+<strong>browser_ip</strong>: The browser IP address.</li>
+              <li>
+<strong>browser_width</strong>: The browser screen width in pixels, if available.</li>
+              <li>
+<strong>session_hash</strong>: A hash of the session.</li>
+              <li>
+<strong>user_agent</strong>: Details of the browsing client, including software and operating versions.</li>
+            </ul>
+
+          </td>
+        </tr>
+        <tr id="closed-at-property-2019-10">
+          <td>
+            closed_at
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"closed_at"</span><span class="o">: </span><span class="s2">"2008-01-10T11:00:00-05:00"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The date and time (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format) when the order was closed.</p>
+          </td>
+        </tr>
+        <tr id="created-at-property-2019-10">
+          <td>
+            created_at
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"created_at"</span><span class="o">: </span><span class="s2">"2008-01-10T11:00:00-05:00"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          </p>
+<p>The autogenerated date and time
+          (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format)
+          when the order was created in Shopify.
+          The value for this property cannot be changed.</p>
+
+          </td>
+        </tr>
+        <tr id="currency-property-2019-10">
+          <td>
+            currency
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"currency"</span><span class="o">: </span><span class="s2">"USD"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The three-letter code (<a href="https://en.wikipedia.org/wiki/ISO_4217" target="_blank">ISO 4217</a> format) for the shop currency.</p>
+          </td>
+        </tr>
+        <tr id="customer-property-2019-10">
+          <td>
+            customer
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"customer"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"id"</span><span class="o">: </span><span class="mi">207119551</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"email"</span><span class="o">: </span><span class="s2">"bob.norman@hostmail.com"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"accepts_marketing"</span><span class="o">: </span><span class="mi">false</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"created_at"</span><span class="o">: </span><span class="s2">"2012-03-13T16:09:55-04:00"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"updated_at"</span><span class="o">: </span><span class="s2">"2012-03-13T16:09:55-04:00"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"first_name"</span><span class="o">: </span><span class="s2">"Bob"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"last_name"</span><span class="o">: </span><span class="s2">"Norman"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"orders_count"</span><span class="o">: </span><span class="s2">"1"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"state"</span><span class="o">: </span><span class="s2">"disabled"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"total_spent"</span><span class="o">: </span><span class="s2">"0.00"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"last_order_id"</span><span class="o">: </span><span class="mi">450789469</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"note"</span><span class="o">: </span><span class="mi">null</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"verified_email"</span><span class="o">: </span><span class="mi">true</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"multipass_identifier"</span><span class="o">: </span><span class="mi">null</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"tax_exempt"</span><span class="o">: </span><span class="mi">false</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"tax_exemptions"</span><span class="o">: </span>{}<span class="p"></span>,
+  <span class="p"></span><span class="s2">"phone"</span><span class="o">: </span><span class="s2">"+13125551212"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"tags"</span><span class="o">: </span><span class="s2">"loyal"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"last_order_name"</span><span class="o">: </span><span class="s2">"#1001"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"currency"</span><span class="o">: </span><span class="s2">"USD"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"addresses"</span><span class="o">: </span>{}<span class="p"></span>,
+  <span class="p"></span><span class="s2">"admin_graphql_api_id"</span><span class="o">: </span><span class="s2">"gid://shopify/Customer/207119551"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"default_address"</span><span class="o">: </span>{}<span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>Information about the customer. The order might not have a customer and apps should not depend on the existence of a <code>customer</code> object. This value might be <code>null</code> if the order was created through Shopify POS. For more information about the <code>customer</code> object, see the <a href="/api/reference/customer">Customer resource</a>.</p>
+          </td>
+        </tr>
+        <tr id="customer-locale-property-2019-10">
+          <td>
+            customer_locale
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"customer_locale"</span><span class="o">: </span><span class="s2">"en-CA"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The two or three-letter language code, optionally followed by a region modifier.</p>
+          </td>
+        </tr>
+        <tr id="discount-applications-property-2019-10">
+          <td>
+            discount_applications
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"discount_applications"</span><span class="o">: </span>[
+  {
+    <span class="p"></span><span class="s2">"type"</span><span class="o">: </span><span class="s2">"manual"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"title"</span><span class="o">: </span><span class="s2">"custom discount"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"description"</span><span class="o">: </span><span class="s2">"customer deserved it"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"value"</span><span class="o">: </span><span class="s2">"2.0"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"value_type"</span><span class="o">: </span><span class="s2">"fixed_amount"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"allocation_method"</span><span class="o">: </span><span class="s2">"one"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"target_selection"</span><span class="o">: </span><span class="s2">"explicit"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"target_type"</span><span class="o">: </span><span class="s2">"line_item"</span><span class="p"></span>
+  },
+  {
+    <span class="p"></span><span class="s2">"type"</span><span class="o">: </span><span class="s2">"script"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"description"</span><span class="o">: </span><span class="s2">"my scripted discount"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"value"</span><span class="o">: </span><span class="s2">"5.0"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"value_type"</span><span class="o">: </span><span class="s2">"fixed_amount"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"allocation_method"</span><span class="o">: </span><span class="s2">"one"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"target_selection"</span><span class="o">: </span><span class="s2">"explicit"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"target_type"</span><span class="o">: </span><span class="s2">"shipping_line"</span><span class="p"></span>
+  },
+  {
+    <span class="p"></span><span class="s2">"type"</span><span class="o">: </span><span class="s2">"discount_code"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"code"</span><span class="o">: </span><span class="s2">"SUMMERSALE"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"value"</span><span class="o">: </span><span class="s2">"10.0"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"value_type"</span><span class="o">: </span><span class="s2">"fixed_amount"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"allocation_method"</span><span class="o">: </span><span class="s2">"across"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"target_selection"</span><span class="o">: </span><span class="s2">"all"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"target_type"</span><span class="o">: </span><span class="s2">"line_item"</span><span class="p"></span>
+  }
+]<span class="p"></span></code></pre>
+              </div>
+            </div>
+            
+<p>An ordered list of stacked discount applications.</p>
+<p>The <code>discount_applications</code> property includes 3 types: <code>discount_code</code>, <code>manual</code>, and <code>script</code>. All 3 types share a common structure and have some type specific attributes.</p>
+<ul>
+  <li>
+    <strong>allocation_method</strong>: The method by which the discount application value has been allocated to entitled lines. Valid values:
+    <ul>
+      <li>
+<code>across</code>: The value is spread across all entitled lines.</li>
+      <li>
+<code>each</code>: The value is applied onto every entitled line.</li>
+      <li>
+<code>one</code>: The value is applied onto a single line.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>code</strong>: The discount code that was used to apply the discount. Available only for discount code applications.
+  </li>
+  <li>
+    <strong>description</strong>: The description of the discount application, as defined by the merchant or the Shopify Script. Available only for manual and script discount applications.
+  </li>
+  <li>
+    <strong>target_selection</strong>: The lines on the order, of the type defined by <code>target_type</code>, that the discount is allocated over. Valid values:
+    <ul>
+      <li>
+<code>all</code>: The discount is allocated onto all lines,</li>
+      <li>
+<code>entitled</code>: The discount is allocated only onto lines it is entitled for.</li>
+      <li>
+<code>explicit</code>: The discount is allocated onto explicitly selected lines.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>target_type</strong>: The type of line on the order that the discount is applicable on. Valid values:
+    <ul>
+      <li>
+<code>line_item</code>: The discount applies to line items.</li>
+      <li>
+<code>shipping_line</code>: The discount applies to shipping lines.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>title</strong>: The title of the discount application, as defined by the merchant. Available only for manual discount applications.
+  </li>
+<li>
+    <strong>type</strong>: The discount application type. Valid values:
+    <ul>
+      <li>
+<code>manual</code>: The discount was manually applied by the merchant (for example, by using an app or creating a draft order).</li>
+      <li>
+<code>script</code>: The discount was applied by a Shopify Script.</li>
+      <li>
+<code>discount_code</code>: The discount was applied by a discount code.</li>
+    </ul>
+  </li>
+  <li>
+    <strong>value</strong>: The value of the discount application as a decimal. This represents the intention of the discount application. For example, if the intent was to apply a 20% discount, then the value will be <code>20.0</code>. If the intent was to apply a $15 discount, then the value will be <code>15.0</code>.
+  </li>
+  <li>
+    <strong>value_type</strong>: The type of the value. Valid values:
+    <ul>
+      <li>
+<code>fixed_amount</code>: A fixed amount discount value in the currency of the order.</li>
+      <li>
+<code>percentage</code>: A percentage discount value.</li>
+    </ul>
+  </li>
+</ul>
+
+          </td>
+        </tr>
+        <tr id="discount-codes-property-2019-10">
+          <td>
+            discount_codes
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"discount_codes"</span><span class="o">: </span>[
+  {
+    <span class="p"></span><span class="s2">"code"</span><span class="o">: </span><span class="s2">"SPRING30"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"30.00"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"type"</span><span class="o">: </span><span class="s2">"fixed_amount"</span><span class="p"></span>
+  }
+]<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          </p>
+<p>
+            A list of discount codes to apply to the order. Each discount code object includes the following fields:
+            </p>
+<ul>
+              <li>
+<strong>amount</strong>: The value of the discount to be deducted from the order total. The <code>type</code> field determines how this value is calculated. After an order is created, this field returns the calculated amount.</li>
+              <li>
+<strong>code</strong>: The discount code.</li>
+              <li>
+                <strong>type</strong>: The type of discount. Default value: <code>fixed_amount</code>. Valid values:
+                <ul>
+                    <li>
+<code>fixed_amount</code>: Applies <code>amount </code> as a unit of the store's currency. For example, if <code>amount</code> is 30 and the store's currency is USD, then 30 USD is deducted from the order total when the discount is applied.</li>
+                    <li>
+<code>percentage</code>: Applies a discount of <code>amount</code> as a percentage of the order total.</li>
+                    <li>
+<code>shipping</code>: Applies a free shipping discount on orders that have a shipping rate less than or equal to <code>amount</code>. For example, if <code>amount</code> is 30, then the discount will give the customer free shipping for any shipping rate that is less than or equal to $30.</li>
+                </ul>
+              </li>
+            </ul>
+
+          </td>
+        </tr>
+        <tr id="email-property-2019-10">
+          <td>
+            email
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"email"</span><span class="o">: </span><span class="s2">"bob.norman@hostmail.com"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The customer's email address.</p>
+          </td>
+        </tr>
+        <tr id="financial-status-property-2019-10">
+          <td>
+            financial_status
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"financial_status"</span><span class="o">: </span><span class="s2">"authorized"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          The status of payments associated with the order. Can only be set when the order is created. Valid values:
+                </p>
+<ul>
+                  <li>
+<strong>pending</strong>: The payments are pending. Payment might fail in this state. Check again to confirm whether the payments have been paid successfully.</li>
+                  <li>
+<strong>authorized</strong>: The payments have been authorized.</li>
+                  <li>
+<strong>partially_paid</strong>: The order have been partially paid.</li>
+                  <li>
+<strong>paid</strong>: The payments have been paid.</li>
+                  <li>
+<strong>partially_refunded</strong>: The payments have been partially refunded.</li>
+                  <li>
+<strong>refunded</strong>: The payments have been refunded.</li>
+                  <li>
+<strong>voided</strong>: The payments have been voided.</li>
+                </ul>
+
+          </td>
+        </tr>
+        <tr id="fulfillments-property-2019-10">
+          <td>
+            fulfillments
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"fulfillments"</span><span class="o">: </span>[
+  {
+    <span class="p"></span><span class="s2">"created_at"</span><span class="o">: </span><span class="s2">"2012-03-13T16:09:54-04:00"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"id"</span><span class="o">: </span><span class="mi">255858046</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"order_id"</span><span class="o">: </span><span class="mi">450789469</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"status"</span><span class="o">: </span><span class="s2">"failure"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"tracking_company"</span><span class="o">: </span><span class="mi">null</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"tracking_number"</span><span class="o">: </span><span class="s2">"1Z2345"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"updated_at"</span><span class="o">: </span><span class="s2">"2012-05-01T14:22:25-04:00"</span><span class="p"></span>
+  }
+]<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>A list of fulfillments associated with the order. For more information, see the <a href="/api/reference/fulfillment">Fulfillment API</a>.</p>
+          </td>
+        </tr>
+        <tr id="fulfillment-status-property-2019-10">
+          <td>
+            fulfillment_status
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"fulfillment_status"</span><span class="o">: </span><span class="s2">"partial"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          The order's status in terms of fulfilled line items. Valid values:
+          </p>
+<ul>
+            <li>
+<strong>fulfilled</strong>: Every line item in the order has been fulfilled.</li>
+            <li>
+<strong>null</strong>: None of the line items in the order have been fulfilled.</li>
+            <li>
+<strong>partial</strong>: At least one line item in the order has been fulfilled.</li>
+            <li>
+<strong>restocked</strong>: Every line item in the order has been restocked and the order canceled.</li>
+          </ul>
+
+          </td>
+        </tr>
+        <tr id="gateway-property-2019-10">
+          <td>
+            gateway
+              <br><span class="heading-flag api-property-flag api-property-flag__deprecated">deprecated</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"gateway"</span><span class="o">: </span><span class="s2">"shopify_payments"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          The payment gateway used.
+</p>
+              <div class="note note-caution">
+                <p>Use the <a href="/api/reference/transaction#properties">Transaction resource</a> instead.</p>
+              </div>
+          </td>
+        </tr>
+        <tr id="id-property-2019-10">
+          <td>
+            id
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"id"</span><span class="o">: </span><span class="mi">450789469</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          The ID of the order, used for API purposes.
+          This is different from the <code>order_number</code> property, which is the ID
+          used by the shop owner and customer.'
+</p>
+          </td>
+        </tr>
+        <tr id="landing-site-property-2019-10">
+          <td>
+            landing_site
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"landing_site"</span><span class="o">: </span><span class="s2">"http://www.example.com?source=abc"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The URL for the page where the buyer landed when they entered the shop.</p>
+          </td>
+        </tr>
+        <tr id="line-items-property-2019-10">
+          <td>
+            line_items
+              <br><span class="heading-flag api-property-flag api-property-flag__required">required</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"line_items"</span><span class="o">: </span>[
+  {
+    <span class="p"></span><span class="s2">"fulfillable_quantity"</span><span class="o">: </span><span class="mi">1</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"fulfillment_service"</span><span class="o">: </span><span class="s2">"amazon"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"fulfillment_status"</span><span class="o">: </span><span class="s2">"fulfilled"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"grams"</span><span class="o">: </span><span class="mi">500</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"id"</span><span class="o">: </span><span class="mi">669751112</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"price"</span><span class="o">: </span><span class="s2">"199.99"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"product_id"</span><span class="o">: </span><span class="mi">7513594</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"quantity"</span><span class="o">: </span><span class="mi">1</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"requires_shipping"</span><span class="o">: </span><span class="mi">true</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"sku"</span><span class="o">: </span><span class="s2">"IPOD-342-N"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"title"</span><span class="o">: </span><span class="s2">"IPod Nano"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"variant_id"</span><span class="o">: </span><span class="mi">4264112</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"variant_title"</span><span class="o">: </span><span class="s2">"Pink"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"vendor"</span><span class="o">: </span><span class="s2">"Apple"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"name"</span><span class="o">: </span><span class="s2">"IPod Nano - Pink"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"gift_card"</span><span class="o">: </span><span class="mi">false</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"price_set"</span><span class="o">: </span>{
+      <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+        <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"199.99"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"USD"</span><span class="p"></span>
+      }<span class="p"></span>,
+      <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+        <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"173.30"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+      }<span class="p"></span>
+    }<span class="p"></span>,
+    <span class="p"></span><span class="s2">"properties"</span><span class="o">: </span>[
+      {
+        <span class="p"></span><span class="s2">"name"</span><span class="o">: </span><span class="s2">"custom engraving"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"value"</span><span class="o">: </span><span class="s2">"Happy Birthday Mom!"</span><span class="p"></span>
+      }
+    ]<span class="p"></span>,
+    <span class="p"></span><span class="s2">"taxable"</span><span class="o">: </span><span class="mi">true</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"tax_lines"</span><span class="o">: </span>[
+      {
+        <span class="p"></span><span class="s2">"title"</span><span class="o">: </span><span class="s2">"HST"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"price"</span><span class="o">: </span><span class="s2">"25.81"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"price_set"</span><span class="o">: </span>{
+          <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+            <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"25.81"</span><span class="p"></span>,
+            <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"USD"</span><span class="p"></span>
+          }<span class="p"></span>,
+          <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+            <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"20.15"</span><span class="p"></span>,
+            <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+          }<span class="p"></span>
+        }<span class="p"></span>,
+        <span class="p"></span><span class="s2">"rate"</span><span class="o">: </span><span class="mi">0.13</span><span class="p"></span>
+      }
+    ]<span class="p"></span>,
+    <span class="p"></span><span class="s2">"total_discount"</span><span class="o">: </span><span class="s2">"5.00"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"total_discount_set"</span><span class="o">: </span>{
+      <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+        <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"5.00"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"USD"</span><span class="p"></span>
+      }<span class="p"></span>,
+      <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+        <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"4.30"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+      }<span class="p"></span>
+    }<span class="p"></span>,
+    <span class="p"></span><span class="s2">"discount_allocations"</span><span class="o">: </span>[
+      {
+        <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"5.00"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"discount_application_index"</span><span class="o">: </span><span class="mi">2</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"amount_set"</span><span class="o">: </span>{
+          <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+            <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"5.00"</span><span class="p"></span>,
+            <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"USD"</span><span class="p"></span>
+          }<span class="p"></span>,
+          <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+            <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"3.96"</span><span class="p"></span>,
+            <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+          }<span class="p"></span>
+        }<span class="p"></span>
+      }
+    ]<span class="p"></span>
+  }
+]<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          A list of line item objects, each containing information about an item in the order. Each object has the following properties:
+          </p>
+<ul>
+            <li>
+<strong>fulfillable_quantity</strong>: The amount available to fulfill, calculated as follows: <pre><code><i>quantity - max(refunded_quantity, fulfilled_quantity) - pending_fulfilled_quantity - open_fulfilled_quantity</i></code></pre>
+</li>
+            <li>
+<strong>fulfillment_service</strong>: The service provider that's fulfilling the item. Valid values: <code>manual</code>, or the name of the provider, such as <code>amazon</code> or <code>shipwire</code>.</li>
+            <li>
+<strong>fulfillment_status</strong>: How far along an order is in terms line items fulfilled. Valid values: <code>null</code>, <code>fulfilled</code>, <code>partial</code>, and <code>not_eligible</code>.</li>
+            <li>
+<strong>grams</strong>: The weight of the item in grams.</li>
+            <li>
+<strong>id</strong>: The ID of the line item.</li>
+            <li>
+<strong>price</strong>: The price of the item before discounts have been applied in the shop currency.</li>
+            <li>
+<strong>price_set</strong>: The price of the line item in shop and presentment currencies.</li>
+            <li>
+<strong>product_id</strong>: The ID of the product that the line item belongs to. Can be <code>null</code> if the original product associated with the order is deleted at a later date.</li>
+            <li>
+<strong>quantity</strong>: The number of items that were purchased.</li>
+            <li>
+<strong>requires_shipping</strong>: Whether the item requires shipping.</li>
+            <li>
+<strong>sku</strong>: The item's SKU (stock keeping unit).</li>
+            <li>
+<strong>title</strong>: The title of the product.</li>
+            <li>
+<strong>variant_id</strong>: The ID of the product variant.</li>
+            <li>
+<strong>variant_title</strong>: The title of the product variant.</li>
+            <li>
+<strong>vendor</strong>: The name of the item's supplier.</li>
+            <li>
+<strong>name</strong>: The name of the product variant.</li>
+            <li>
+<strong>gift_card</strong>: Whether the item is a gift card. If <code>true</code>, then the item is not taxed or considered for shipping charges.</li>
+            <li>
+<strong>properties</strong>:
+              An array of custom information for the item that has been added to the cart. Often used to provide product customization options.
+              For more information, see <a href="/en/themes/customization/products/features/get-customization-information-for-products" title="Link to product customization documentation">
+              <i>Get customization information for products with line item properties</i></a>.
+            </li>
+            <li>
+<strong>taxable</strong>: Whether the item was taxable.</li>
+            <li>
+<strong>tax_lines</strong>: A list of tax line objects, each of which details a tax applied to the item.
+              <ul>
+                <li>
+<code>title</code>: The name of the tax.</li>
+                <li>
+<code>price</code>: The amount added to the order for this tax in the shop currency.</li>
+                <li>
+<code>price_set</code>: The amount added to the order for this tax in shop and presentment currencies.</li>
+                <li>
+<code>rate</code>: The tax rate applied to the order to calculate the tax price.</li>
+              </ul>
+            </li>
+            <li>
+<strong>tip_payment_gateway</strong>: The payment gateway used to tender the tip, such as <code>shopify_payments</code>. Present only on tips.</li>
+            <li>
+<strong>tip_payment_method</strong>: The payment method used to tender the tip, such as <code>Visa</code>. Present only on tips.</li>
+            <li>
+<strong>total_discount</strong>: The total discount amount applied to this line item in the shop currency. This value is not subtracted in the line item price.</li>
+            <li>
+<strong>total_discount_set</strong>: The total discount applied to the line item in shop and presentment currencies.</li>
+            <li>
+              <strong>discount_allocations</strong>: An ordered list of amounts allocated by discount applications. Each discount allocation is associated to a particular discount application.
+              <ul>
+                <li>
+<code>amount</code>: The discount amount allocated to the line in the shop currency.</li>
+                <li>
+<code>discount_application_index</code>: The index of the associated discount application in the order's <code>discount_applications</code> list.</li>
+                <li>
+<code>amount_set</code>: The discount amount allocated to the line item in shop and presentment currencies.</li>
+              </ul>
+            </li>
+          </ul>
+
+          </td>
+        </tr>
+        <tr id="location-id-property-2019-10">
+          <td>
+            location_id
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"location_id"</span><span class="o">: </span><span class="mi">49202758</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The ID of the physical location where the order was processed.</p>
+          </td>
+        </tr>
+        <tr id="name-property-2019-10">
+          <td>
+            name
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"name"</span><span class="o">: </span><span class="s2">"#1001"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The order name as represented by a number. Must start with <code>#</code>.</p>
+          </td>
+        </tr>
+        <tr id="note-property-2019-10">
+          <td>
+            note
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"note"</span><span class="o">: </span><span class="s2">"Customer changed their mind."</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>An optional note that a shop owner can attach to the order.</p>
+          </td>
+        </tr>
+        <tr id="note-attributes-property-2019-10">
+          <td>
+            note_attributes
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"note_attributes"</span><span class="o">: </span>[
+  {
+    <span class="p"></span><span class="s2">"name"</span><span class="o">: </span><span class="s2">"custom name"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"value"</span><span class="o">: </span><span class="s2">"custom value"</span><span class="p"></span>
+  }
+]<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>Extra information that is added to the order. Appears in the <strong>Additional details</strong> section of an order details page. Each array entry must contain a hash with <code>name</code> and <code>value</code> keys.</p>
+          </td>
+        </tr>
+        <tr id="number-property-2019-10">
+          <td>
+            number
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"number"</span><span class="o">: </span><span class="mi">1000</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>                 For internal use only. An ID unique to the shop. Numbers are sequential and start at 1000.
+</p>
+          </td>
+        </tr>
+        <tr id="order-number-property-2019-10">
+          <td>
+            order_number
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"order_number"</span><span class="o">: </span><span class="mi">1001</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The ID of the order used by the shop owner and customer. This is different from the <code>id</code> property, which is the ID of the order used by the API.</p>
+          </td>
+        </tr>
+        <tr id="payment-details-property-2019-10">
+          <td>
+            payment_details
+              <br><span class="heading-flag api-property-flag api-property-flag__deprecated">deprecated</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"payment_details"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"avs_result_code"</span><span class="o">: </span><span class="s2">"Y"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"credit_card_bin"</span><span class="o">: </span><span class="s2">"453600"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"cvv_result_code"</span><span class="o">: </span><span class="s2">"M"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"credit_card_number"</span><span class="o">: </span><span class="s2">"•••• •••• •••• 4242"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"credit_card_company"</span><span class="o">: </span><span class="s2">"Visa"</span><span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          An object containing information about the payment. It has the following properties:
+          </p>
+<ul>
+            <li>
+<strong>avs_result_code</strong>: The response code from <a href="https://en.wikipedia.org/wiki/Address_Verification_System" target="_blank">the address verification system</a> (AVS). The code is a single letter. See <a href="http://www.emsecommerce.net/avs_cvv2_response_codes.htm" target="_blank"> this chart</a> for the codes and their definitions.</li>
+            <li>
+<strong>credit_card_bin</strong>: The <a href="https://en.wikipedia.org/wiki/ISO/IEC_7812" target="_blank">issuer identification number</a> (IIN), formerly known as the bank identification number (BIN), of the customer's credit card. This is made up of the first few digits of the credit card number.</li>
+            <li>
+<strong>credit_card_company</strong>: The name of the company who issued the customer's credit card.</li>
+            <li>
+<strong>credit_card_number</strong>: The customer's credit card number, with most of the leading digits redacted.</li>
+            <li>
+<strong>cvv_result_code</strong>: The response code from the credit card company indicating whether the customer entered the <a href="https://en.wikipedia.org/wiki/Card_Security_Code" target="_blank">card security code</a> (card verification value) correctly. The code is a single letter or empty string. See <a href="http://www.emsecommerce.net/avs_cvv2_response_codes.htm" target="_blank"> this chart</a> for the codes and their definitions.</li>
+          </ul>
+
+              <div class="note note-caution">
+                <p>Use the <a href="/api/reference/transaction">Transaction resource</a> instead.</p>
+              </div>
+          </td>
+        </tr>
+        <tr id="payment-gateway-names-property-2019-10">
+          <td>
+            payment_gateway_names
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"payment_gateway_names"</span><span class="o">: </span>[
+  <span class="s2">"authorize_net"</span>,
+  <span class="s2">"Cash on Delivery (COD)"</span>
+]<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The list of payment gateways used for the order.</p>
+          </td>
+        </tr>
+        <tr id="phone-property-2019-10">
+          <td>
+            phone
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"phone"</span><span class="o">: </span><span class="s2">"+557734881234"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The customer's phone number for receiving SMS notifications.</p>
+          </td>
+        </tr>
+        <tr id="presentment-currency-property-2019-10">
+          <td>
+            presentment_currency
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"presentment_currency"</span><span class="o">: </span><span class="s2">"CAD"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The presentment currency that was used to display prices to the customer.</p>
+          </td>
+        </tr>
+        <tr id="processed-at-property-2019-10">
+          <td>
+            processed_at
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"processed_at"</span><span class="o">: </span><span class="s2">"2008-01-10T11:00:00-05:00"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          The date and time (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format)
+          when an order was processed.  This value is the date that appears on your orders and that's used in the
+          analytic reports. By default, it matches the <code>created_at</code> value. If you're importing
+          orders from an app or another platform, then you can set <code>processed_at</code> to a date and time
+          in the past to match when the original order was created.
+</p>
+          </td>
+        </tr>
+        <tr id="processing-method-property-2019-10">
+          <td>
+            processing_method
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"processing_method"</span><span class="o">: </span><span class="s2">"direct"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          How the payment was processed. It has the following valid values:
+          </p>
+<ul>
+            <li>
+<strong>checkout</strong>: The order was processed using the Shopify checkout.</li>
+            <li>
+<strong>direct</strong>: The order was processed using a <a href="/en/manual/payments/third-party-providers/direct-and-external-providers" target="_blank">direct payment provider</a>.</li>
+            <li>
+<strong>manual</strong>: The order was processed using a <a href="/en/manual/payments/manual-payments" target="_blank">manual payment method</a>.</li>
+            <li>
+<strong>offsite</strong>: The order was processed by an <a href="/en/manual/payments/third-party-providers/direct-and-external-providers" target="_blank">external payment provider</a> to the Shopify checkout.</li>
+            <li>
+<strong>express</strong>: The order was processed using <a href="/en/manual/payments/paypal" target="_blank">PayPal Express Checkout</a>.</li>
+            <li>
+<strong>free</strong>: The order was processed as a free order using a discount code.</li>
+          </ul>
+
+          </td>
+        </tr>
+        <tr id="referring-site-property-2019-10">
+          <td>
+            referring_site
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"referring_site"</span><span class="o">: </span><span class="s2">"http://www.anexample.com"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The website where the customer clicked a link to the shop.</p>
+          </td>
+        </tr>
+        <tr id="refunds-property-2019-10">
+          <td>
+            refunds
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"refunds"</span><span class="o">: </span>[
+  {
+    <span class="p"></span><span class="s2">"id"</span><span class="o">: </span><span class="mi">18423447608</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"order_id"</span><span class="o">: </span><span class="mi">394481795128</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"created_at"</span><span class="o">: </span><span class="s2">"2018-03-06T09:35:37-05:00"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"note"</span><span class="o">: </span><span class="mi">null</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"user_id"</span><span class="o">: </span><span class="mi">null</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"processed_at"</span><span class="o">: </span><span class="s2">"2018-03-06T09:35:37-05:00"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"refund_line_items"</span><span class="o">: </span>[]<span class="p"></span>,
+    <span class="p"></span><span class="s2">"transactions"</span><span class="o">: </span>[]<span class="p"></span>,
+    <span class="p"></span><span class="s2">"order_adjustments"</span><span class="o">: </span>[]<span class="p"></span>
+  }
+]<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>A list of refunds applied to the order. For more information, see the <a href="/api/reference/refund">Refund API</a>.</p>
+          </td>
+        </tr>
+        <tr id="shipping-address-property-2019-10">
+          <td>
+            shipping_address
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"shipping_address"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"address1"</span><span class="o">: </span><span class="s2">"123 Amoebobacterieae St"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"address2"</span><span class="o">: </span><span class="s2">""</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"city"</span><span class="o">: </span><span class="s2">"Ottawa"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"company"</span><span class="o">: </span><span class="mi">null</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"country"</span><span class="o">: </span><span class="s2">"Canada"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"first_name"</span><span class="o">: </span><span class="s2">"Bob"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"last_name"</span><span class="o">: </span><span class="s2">"Bobsen"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"latitude"</span><span class="o">: </span><span class="s2">"45.41634"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"longitude"</span><span class="o">: </span><span class="s2">"-75.6868"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"phone"</span><span class="o">: </span><span class="s2">"555-625-1199"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"province"</span><span class="o">: </span><span class="s2">"Ontario"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"zip"</span><span class="o">: </span><span class="s2">"K2P0V6"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"name"</span><span class="o">: </span><span class="s2">"Bob Bobsen"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"country_code"</span><span class="o">: </span><span class="s2">"CA"</span><span class="p"></span>,
+  <span class="p"></span><span class="s2">"province_code"</span><span class="o">: </span><span class="s2">"ON"</span><span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          The mailing address to where the order will be shipped. This address is optional and will not be available on orders that do not require shipping. It has the following properties:
+          </p>
+<ul>
+            <li>
+<strong>address1</strong>: The street address of the shipping address.</li>
+            <li>
+<strong>address2</strong>: An optional additional field for the street address of the shipping address.</li>
+            <li>
+<strong>city</strong>: The city, town, or village of the shipping address.</li>
+            <li>
+<strong>company</strong>: The company of the person associated with the shipping address.</li>
+            <li>
+<strong>country</strong>: The name of the country of the shipping address.</li>
+            <li>
+<strong>country_code</strong>: The two-letter code (<a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2" target="_blank">ISO 3166-1</a> format) for the country of the shipping address.</li>
+            <li>
+<strong>first_name</strong>: The first name of the person associated with the shipping address.</li>
+            <li>
+<strong>last_name</strong>: The last name of the person associated with the shipping address.</li>
+            <li>
+<strong>latitude</strong>: The latitude of the shipping address.</li>
+            <li>
+<strong>longitude</strong>: The longitude of the shipping address.</li>
+            <li>
+<strong>name</strong>: The full name of the person associated with the payment method.</li>
+            <li>
+<strong>phone</strong>: The phone number at the shipping address.</li>
+            <li>
+<strong>province</strong>: The name of the region (province, state, prefecture, …) of the shipping address.</li>
+            <li>
+<strong>province_code</strong>: The two-letter abbreviation of the region of the shipping address.</li>
+            <li>
+<strong>zip</strong>: The postal code (zip, postcode, Eircode, …) of the shipping address.</li>
+          </ul>
+
+          </td>
+        </tr>
+        <tr id="shipping-lines-property-2019-10">
+          <td>
+            shipping_lines
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"shipping_lines"</span><span class="o">: </span>[
+  {
+    <span class="p"></span><span class="s2">"code"</span><span class="o">: </span><span class="s2">"INT.TP"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"price"</span><span class="o">: </span><span class="s2">"4.00"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"price_set"</span><span class="o">: </span>{
+      <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+        <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"4.00"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"USD"</span><span class="p"></span>
+      }<span class="p"></span>,
+      <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+        <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"3.17"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+      }<span class="p"></span>
+    }<span class="p"></span>,
+    <span class="p"></span><span class="s2">"discounted_price"</span><span class="o">: </span><span class="s2">"4.00"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"discounted_price_set"</span><span class="o">: </span>{
+      <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+        <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"4.00"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"USD"</span><span class="p"></span>
+      }<span class="p"></span>,
+      <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+        <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"3.17"</span><span class="p"></span>,
+        <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+      }<span class="p"></span>
+    }<span class="p"></span>,
+    <span class="p"></span><span class="s2">"source"</span><span class="o">: </span><span class="s2">"canada_post"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"title"</span><span class="o">: </span><span class="s2">"Small Packet International Air"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"tax_lines"</span><span class="o">: </span>[]<span class="p"></span>,
+    <span class="p"></span><span class="s2">"carrier_identifier"</span><span class="o">: </span><span class="s2">"third_party_carrier_identifier"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"requested_fulfillment_service_id"</span><span class="o">: </span><span class="s2">"third_party_fulfillment_service_id"</span><span class="p"></span>
+  }
+]<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          An array of objects, each of which details a shipping method used. Each object has the following properties:
+            </p>
+<ul>
+              <li>
+<strong>code</strong>: A reference to the shipping method.</li>
+              <li>
+<strong>discounted_price</strong>: The price of the shipping method after line-level discounts have been applied. Doesn't reflect cart-level or order-level discounts.</li>
+              <li>
+<strong>discounted_price_set</strong>: The price of the shipping method in both shop and presentment currencies after line-level discounts have been applied.</li>
+              <li>
+<strong>price</strong>: The price of this shipping method in the shop currency. Can't be negative.</li>
+              <li>
+<strong>price_set</strong>: The price of the shipping method in shop and presentment currencies.</li>
+              <li>
+<strong>source</strong>: The source of the shipping method.</li>
+              <li>
+<strong>title</strong>: The title of the shipping method.</li>
+              <li>
+<strong>tax_lines</strong>: A list of tax line objects, each of which details a tax applicable to this shipping line.</li>
+              <li>
+<strong>carrier_identifier</strong>: A reference to the carrier service that provided the rate. Present when the rate was computed by a third-party carrier service.
+              </li>
+<li>
+<strong>requested_fulfillment_service_id</strong>: A reference to the fulfillment service that is being requested for the shipping method. Present if the shipping method requires processing by a third party fulfillment service; <code>null</code> otherwise.
+            </li>
+</ul>
+
+          </td>
+        </tr>
+        <tr id="source-name-property-2019-10">
+          <td>
+            source_name
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"source_name"</span><span class="o">: </span><span class="s2">"web"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>        Where the order originated. Can be set only during order creation, and is not writeable afterwards. Values for Shopify channels are
+        protected and cannot be assigned by other API clients: <code>web</code>, <code>pos</code>, <code>shopify_draft_order</code>, <code>iphone</code>, and <code>android</code>.
+        Orders created via the API can be assigned any other string of your choice. If unspecified, then new orders are assigned the value of your app's ID.
+</p>
+          </td>
+        </tr>
+        <tr id="subtotal-price-property-2019-10">
+          <td>
+            subtotal_price
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"subtotal_price"</span><span class="o">: </span><span class="mi">398.0</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The price of the order in the shop currency after discounts but before shipping, taxes, and tips.</p>
+          </td>
+        </tr>
+        <tr id="subtotal-price-set-property-2019-10">
+          <td>
+            subtotal_price_set
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"subtotal_price_set"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"141.99"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"CAD"</span><span class="p"></span>
+  }<span class="p"></span>,
+  <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"90.95"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+  }<span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The subtotal of the order in shop and presentment currencies.</p>
+          </td>
+        </tr>
+        <tr id="tags-property-2019-10">
+          <td>
+            tags
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"tags"</span><span class="o">: </span><span class="s2">"imported"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>Tags attached to the order, formatted as a string of comma-separated values. Tags are additional short descriptors, commonly used for filtering and searching. Each individual tag is limited to 40 characters in length.</p>
+          </td>
+        </tr>
+        <tr id="tax-lines-property-2019-10">
+          <td>
+            tax_lines
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"tax_lines"</span><span class="o">: </span>[
+  {
+    <span class="p"></span><span class="s2">"price"</span><span class="o">: </span><span class="mi">11.94</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"rate"</span><span class="o">: </span><span class="mi">0.06</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"title"</span><span class="o">: </span><span class="s2">"State Tax"</span><span class="p"></span>
+  }
+]<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>          An array of tax line objects, each of which details a tax applicable to the order. Each object has the following properties:
+            </p>
+<ul>
+              <li>
+<strong>price</strong>: The amount of tax to be charged in the shop currency.</li>
+              <li>
+<strong>rate</strong>: The rate of tax to be applied.</li>
+              <li>
+<strong>title</strong>: The name of the tax.</li>
+            </ul>
+          When creating an order through the API, tax lines can be specified on the order or the line items but not both. Tax lines specified on the order are split across the <em>taxable</em> line items in the created order.
+
+          </td>
+        </tr>
+        <tr id="taxes-included-property-2019-10">
+          <td>
+            taxes_included
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"taxes_included"</span><span class="o">: </span><span class="mi">false</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>Whether taxes are included in the order subtotal.</p>
+          </td>
+        </tr>
+        <tr id="test-property-2019-10">
+          <td>
+            test
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"test"</span><span class="o">: </span><span class="mi">true</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>Whether this is a test order.</p>
+          </td>
+        </tr>
+        <tr id="token-property-2019-10">
+          <td>
+            token
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"token"</span><span class="o">: </span><span class="s2">"b1946ac92492d2347c6235b4d2611184"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>A unique token for the order.</p>
+          </td>
+        </tr>
+        <tr id="total-discounts-property-2019-10">
+          <td>
+            total_discounts
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_discounts"</span><span class="o">: </span><span class="s2">"0.00"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The total discounts applied to the price of the order in the shop currency.</p>
+          </td>
+        </tr>
+        <tr id="total-discounts-set-property-2019-10">
+          <td>
+            total_discounts_set
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_discounts_set"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"0.00"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"CAD"</span><span class="p"></span>
+  }<span class="p"></span>,
+  <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"0.00"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+  }<span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The total discounts applied to the price of the order in shop and presentment currencies.</p>
+          </td>
+        </tr>
+        <tr id="total-line-items-price-property-2019-10">
+          <td>
+            total_line_items_price
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_line_items_price"</span><span class="o">: </span><span class="s2">"398.00"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The sum of all line item prices in the shop currency.</p>
+          </td>
+        </tr>
+        <tr id="total-line-items-price-set-property-2019-10">
+          <td>
+            total_line_items_price_set
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_line_items_price_set"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"141.99"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"CAD"</span><span class="p"></span>
+  }<span class="p"></span>,
+  <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"90.95"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+  }<span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The total of all line item prices in shop and presentment currencies.</p>
+          </td>
+        </tr>
+        <tr id="total-price-property-2019-10">
+          <td>
+            total_price
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_price"</span><span class="o">: </span><span class="s2">"409.94"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The sum of all line item prices, discounts, shipping, taxes, and tips in the shop currency. Must be positive.</p>
+          </td>
+        </tr>
+        <tr id="total-price-set-property-2019-10">
+          <td>
+            total_price_set
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_price_set"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"164.86"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"CAD"</span><span class="p"></span>
+  }<span class="p"></span>,
+  <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"105.31"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+  }<span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The total price of the order in shop and presentment currencies.</p>
+          </td>
+        </tr>
+        <tr id="total-tax-property-2019-10">
+          <td>
+            total_tax
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_tax"</span><span class="o">: </span><span class="s2">"11.94"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The sum of all the taxes applied to the order in th shop currency. Must be positive).</p>
+          </td>
+        </tr>
+        <tr id="total-tax-set-property-2019-10">
+          <td>
+            total_tax_set
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_tax_set"</span><span class="o">: </span>{
+  <span class="p"></span><span class="s2">"shop_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"18.87"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"CAD"</span><span class="p"></span>
+  }<span class="p"></span>,
+  <span class="p"></span><span class="s2">"presentment_money"</span><span class="o">: </span>{
+    <span class="p"></span><span class="s2">"amount"</span><span class="o">: </span><span class="s2">"11.82"</span><span class="p"></span>,
+    <span class="p"></span><span class="s2">"currency_code"</span><span class="o">: </span><span class="s2">"EUR"</span><span class="p"></span>
+  }<span class="p"></span>
+}<span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The total tax applied to the order in shop and presentment currencies.</p>
+          </td>
+        </tr>
+        <tr id="total-tip-received-property-2019-10">
+          <td>
+            total_tip_received
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_tip_received"</span><span class="o">: </span><span class="s2">"4.87"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The sum of all the tips in the order in the shop currency.</p>
+          </td>
+        </tr>
+        <tr id="total-weight-property-2019-10">
+          <td>
+            total_weight
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"total_weight"</span><span class="o">: </span><span class="mi">300</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The sum of all line item weights in grams.</p>
+          </td>
+        </tr>
+        <tr id="updated-at-property-2019-10">
+          <td>
+            updated_at
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"updated_at"</span><span class="o">: </span><span class="s2">"2012-08-24T14:02:15-04:00"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>        </p>
+<p>The date and time (<a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">ISO 8601</a> format) when the order was last modified.</p>
+        <p>Filtering orders by <code>updated_at</code> is not an effective method for fetching orders because its value can change when no visible fields of an order have been updated. Use the <a href="/api/reference/webhook">Webhook</a> and <a href="/api/reference/event">Event</a> APIs to subscribe to order events instead.</p>
+
+          </td>
+        </tr>
+        <tr id="user-id-property-2019-10">
+          <td>
+            user_id
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"user_id"</span><span class="o">: </span><span class="mi">31522279</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The ID of the user logged into Shopify POS who processed the order, if applicable.</p>
+          </td>
+        </tr>
+        <tr id="order-status-url-property-2019-10">
+          <td>
+            order_status_url
+              <br><span class="heading-flag api-property-flag api-property-flag__read-only">read-only</span>
+          </td>
+          <td>
+            <div class="api-properties-example">
+              <div class="highlight">
+                <pre><code class="javascript"><span class="p"></span><span class="s2">"order_status_url"</span><span class="o">: </span><span class="s2">"https://checkout.shopify.com/112233/checkouts/4207896aad57dfb159/thank_you_token?key=753621327b9e8a64789651bf221dfe35"</span><span class="p"></span></code></pre>
+              </div>
+            </div>
+            <p>The URL pointing to the <a href="https://help.shopify.com/manual/orders/status-tracking" target="_blank">order status web page</a>, if applicable.</p>
+          </td>
+        </tr>
+    </tbody>
+  </table>
