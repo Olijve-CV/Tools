@@ -1,4 +1,4 @@
-import ebayOrderData
+import xmlParse
 
 DICT = 1
 LIST = 2
@@ -6,6 +6,7 @@ ENUM = 3
 BOOLEAN = 4
 STRING = 5
 INT = 6
+BIGDECIMAL = 7
 
 def checkObjType(obj):
     if isinstance(obj, dict):
@@ -15,12 +16,21 @@ def checkObjType(obj):
     elif isinstance(obj, str):
         if " : [" in obj:
             return ENUM
-        elif "boolean" == obj:
+        elif "true" == obj or "false" == obj:
             return BOOLEAN
-        elif "integer" == obj:
+        elif obj.isdigit():
             return INT
-        elif "string" == obj or "" == obj:
+        else:
             return STRING
+    elif isinstance(obj, bool):
+        return BOOLEAN
+    elif isinstance(obj, int):
+        return INT
+    elif isinstance(obj, float):
+        return BIGDECIMAL
+    elif obj is None:
+        return STRING
+
     raise Exception("None Type of obj: " + str(obj))
 
 gdTypeObj = {}
@@ -41,7 +51,11 @@ class DataObj(object):
     def put(self, k, v):
         self.attributes[k] = v
         RegisterConstName(k)
-        
+
+    def changeName(self, name):
+        lParts = name.split("_")
+        return "".join([o[0].upper()+o[1:] if i>0 else o for i,o in enumerate(lParts) ])
+
     def getUpperVaribale(self):
         return self.name.upper()
         
@@ -50,8 +64,8 @@ class DataObj(object):
         
     def getVariableName(self):
         if getattr(self, "originName", None):
-            return self.originName
-        return self.name
+            return self.changeName(self.originName)
+        return self.changeName(self.name)
         
     def getVariableType(self):
         pass
@@ -76,12 +90,16 @@ class StringObj(DataObj):
             return "String"
            
     def getExtraAnnotation(self):
-        if self.name.endswith("Date"):
+        if self.name.endswith("_at"):
             return """
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)"""
         else:
             return ""
+
+class BigDecimalObj(DataObj):
+    def getVariableType(self):
+        return "BigDecimal"
 
 class EnumObj(DataObj):
     def getVariableType(self):
@@ -107,7 +125,8 @@ class %s {
         return str
         
     def getVariableType(self):
-        return self.name[0].upper() + self.name[1:]
+        _name = self.getVariableName()
+        return _name[0].upper() + _name[1:]
         
     def GetAttributeCode(self):
         attrlst = [obj.getCode() for _, obj in self.attributes.items()]
@@ -128,7 +147,7 @@ class ListObj(DataObj):
         
     def getVariableName(self):
         
-        return self.name + "List"
+        return self.changeName(self.name) + "List"
  
 def TryRenameObj(dictObj):
 
@@ -151,8 +170,9 @@ def RegisterConstName(name):
             
 def parseData(name, obj):
 
+    print(name, obj)
     iType = checkObjType(obj)
-    
+
     if iType == DICT:
         dictObj = DictObj(name, obj)
 
@@ -173,7 +193,13 @@ def parseData(name, obj):
         listObj = ListObj(_name, obj)
         listObj.originName = name
         RegisterConstName(name)
-        newObj = parseData(_name, obj[0])
+
+        if obj:
+            newObj = parseData(_name, obj[0])
+        else:
+            newObj = DictObj(_name, {})
+            gdTypeObj[_name] = newObj
+
         listObj.setChildObj(newObj)
         return listObj
     elif iType == INT:
@@ -184,16 +210,18 @@ def parseData(name, obj):
         return StringObj(name, obj)
     elif iType == ENUM:
         return EnumObj(name, obj)
+    elif iType == BIGDECIMAL:
+        return BigDecimalObj(name, obj)
     else:
         raise Exception("iType lost: %s"%iType)
 
-relative_path = "./EbayModel/"
+relative_path = "./Model/"
 def generateCodeFileByObj(obj):
 
-    name = obj.name
+    name = obj.getVariableName()
     writeFile = open("%s%s.kt"%(relative_path, name[0].upper() + name[1:]), "w")
     # 文件头
-    writeFile.writelines('''package com.apex.ebay.model
+    writeFile.writelines('''package com.apex.shopify.model
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import lombok.Data
@@ -214,7 +242,7 @@ def GetConstText():
 
 def generateConstFile():
     jsonFile = open("%s%s.kt"%(relative_path, "JsonConstants"), "w")
-    jsonFile.writelines("""package com.apex.ebay.model
+    jsonFile.writelines("""package com.apex.shopify.model
 
 object JsonConstants {
 
@@ -224,7 +252,7 @@ object JsonConstants {
     jsonFile.close()
     
     
-parseData("OrderList", ebayOrderData.OrderList)
+parseData("Order", xmlParse.GetOrderProperty())
 for name, obj in gdTypeObj.items():
     generateCodeFileByObj(obj)
 

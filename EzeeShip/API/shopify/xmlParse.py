@@ -30,8 +30,11 @@ def transCode2Dict(lCode):
     return dProperty
 
 def ParseOrderBs(bs):
-    dProperty = transCode2Dict(GetAllCode(bs))
-    print(dProperty.keys())
+    return transCode2Dict(GetAllCode(bs))
+
+def GetOrderProperty():
+    bs = getOrderBs()
+    return ParseOrderBs(bs)
 
 def Run():
     bs = getOrderBs()
