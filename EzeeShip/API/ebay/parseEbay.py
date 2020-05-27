@@ -1,4 +1,5 @@
 import ebayOrderData
+import ebayInventoryItem
 
 DICT = 1
 LIST = 2
@@ -17,7 +18,7 @@ def checkObjType(obj):
             return ENUM
         elif "boolean" == obj:
             return BOOLEAN
-        elif "integer" == obj:
+        elif "integer" == obj or "number" == obj:
             return INT
         elif "string" == obj or "" == obj:
             return STRING
@@ -187,11 +188,10 @@ def parseData(name, obj):
     else:
         raise Exception("iType lost: %s"%iType)
 
-relative_path = "./EbayModel/"
-def generateCodeFileByObj(obj):
+def generateCodeFileByObj(path, obj):
 
     name = obj.name
-    writeFile = open("%s%s.kt"%(relative_path, name[0].upper() + name[1:]), "w")
+    writeFile = open("%s%s.kt"%(path, name[0].upper() + name[1:]), "w")
     # 文件头
     writeFile.writelines('''package com.apex.ebay.model
 
@@ -212,8 +212,9 @@ def GetConstText():
     constLst = ['const val %s = "%s"'%(obj.upper(), obj) for obj in gdConst]
     return "\r\n\t".join(constLst)
 
-def generateConstFile():
-    jsonFile = open("%s%s.kt"%(relative_path, "JsonConstants"), "w")
+
+def generateConstFile(path):
+    jsonFile = open("%s%s.kt"%(path, "JsonConstants"), "w")
     jsonFile.writelines("""package com.apex.ebay.model
 
 object JsonConstants {
@@ -223,9 +224,27 @@ object JsonConstants {
 }"""%GetConstText())
     jsonFile.close()
     
-    
-parseData("OrderList", ebayOrderData.OrderList)
-for name, obj in gdTypeObj.items():
-    generateCodeFileByObj(obj)
+order_relative_path = "./EbayModel/"    
+def generateOrder():
+    global gdTypeObj, gdConst
+    parseData("OrderList", ebayOrderData.OrderList)
+    for name, obj in gdTypeObj.items():
+        generateCodeFileByObj(order_relative_path, obj)
 
-generateConstFile()
+    generateConstFile(order_relative_path)
+    gdTypeObj = {}
+    gdConst = set()
+    
+inventory_relative_path = "./EbayInventory/"
+def generateInventoryItem():
+    global gdTypeObj, gdConst
+    parseData("InventoryItemList", ebayInventoryItem.requestList)
+    for name, obj in gdTypeObj.items():
+        generateCodeFileByObj(inventory_relative_path, obj)
+
+    generateConstFile(inventory_relative_path)
+    gdTypeObj = {}
+    gdConst = set()
+    
+generateOrder()
+generateInventoryItem()
