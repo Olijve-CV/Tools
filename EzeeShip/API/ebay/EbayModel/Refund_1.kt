@@ -14,21 +14,21 @@ class Refund_1 {
  
     
     @JsonProperty(value = JsonConstants.AMOUNT)
-    val amount: Amount? = null
+    var amount: Amount? = null
     
     @JsonProperty(value = JsonConstants.REFUNDDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val refundDate: Date? = null
+    var refundDate: Date? = null
     
     @JsonProperty(value = JsonConstants.REFUNDID)
-    val refundId: String? = null
+    var refundId: String? = null
     
     @JsonProperty(value = JsonConstants.REFUNDREFERENCEID)
-    val refundReferenceId: String? = null
+    var refundReferenceId: String? = null
     
     @JsonProperty(value = JsonConstants.REFUNDSTATUS)
-    val refundStatus: String? = null
+    var refundStatus: String? = null
     
 }
         

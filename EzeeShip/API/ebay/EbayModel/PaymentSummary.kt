@@ -14,13 +14,13 @@ class PaymentSummary {
  
     
     @JsonProperty(value = JsonConstants.PAYMENTS)
-    val paymentList: List<Payment>? = null
+    var paymentList: List<Payment>? = null
     
     @JsonProperty(value = JsonConstants.REFUNDS)
-    val refundList: List<Refund_1>? = null
+    var refundList: List<Refund_1>? = null
     
     @JsonProperty(value = JsonConstants.TOTALDUESELLER)
-    val totalDueSeller: TotalDueSeller? = null
+    var totalDueSeller: TotalDueSeller? = null
     
 }
         

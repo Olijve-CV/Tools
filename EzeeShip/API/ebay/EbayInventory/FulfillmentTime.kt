@@ -14,10 +14,10 @@ class FulfillmentTime {
  
     
     @JsonProperty(value = JsonConstants.UNIT)
-    val unit: String? = null
+    var unit: String? = null
     
     @JsonProperty(value = JsonConstants.VALUE)
-    val value: Int? = null
+    var value: Int? = null
     
 }
         

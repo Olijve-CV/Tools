@@ -14,13 +14,13 @@ class Properties {
  
     
     @JsonProperty(value = JsonConstants.BUYERPROTECTION)
-    val buyerProtection: Boolean? = null
+    var buyerProtection: Boolean? = null
     
     @JsonProperty(value = JsonConstants.FROMBESTOFFER)
-    val fromBestOffer: Boolean? = null
+    var fromBestOffer: Boolean? = null
     
     @JsonProperty(value = JsonConstants.SOLDVIAADCAMPAIGN)
-    val soldViaAdCampaign: Boolean? = null
+    var soldViaAdCampaign: Boolean? = null
     
 }
         

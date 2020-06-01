@@ -14,13 +14,13 @@ class DeliveryCost {
  
     
     @JsonProperty(value = JsonConstants.IMPORTCHARGES)
-    val importCharges: ImportCharges? = null
+    var importCharges: ImportCharges? = null
     
     @JsonProperty(value = JsonConstants.SHIPPINGCOST)
-    val shippingCost: ShippingCost? = null
+    var shippingCost: ShippingCost? = null
     
     @JsonProperty(value = JsonConstants.SHIPPINGINTERMEDIATIONFEE)
-    val shippingIntermediationFee: ShippingIntermediationFee? = null
+    var shippingIntermediationFee: ShippingIntermediationFee? = null
     
 }
         

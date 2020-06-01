@@ -14,7 +14,7 @@ class PrimaryPhone {
  
     
     @JsonProperty(value = JsonConstants.PHONENUMBER)
-    val phoneNumber: String? = null
+    var phoneNumber: String? = null
     
 }
         

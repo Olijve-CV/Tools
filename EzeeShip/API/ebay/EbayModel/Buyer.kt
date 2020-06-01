@@ -14,7 +14,7 @@ class Buyer {
  
     
     @JsonProperty(value = JsonConstants.USERNAME)
-    val username: String? = null
+    var username: String? = null
     
 }
         

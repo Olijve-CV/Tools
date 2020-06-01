@@ -14,7 +14,7 @@ class ShipToLocationAvailability {
  
     
     @JsonProperty(value = JsonConstants.QUANTITY)
-    val quantity: Int? = null
+    var quantity: Int? = null
     
 }
         

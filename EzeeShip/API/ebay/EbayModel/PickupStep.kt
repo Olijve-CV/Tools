@@ -14,7 +14,7 @@ class PickupStep {
  
     
     @JsonProperty(value = JsonConstants.MERCHANTLOCATIONKEY)
-    val merchantLocationKey: String? = null
+    var merchantLocationKey: String? = null
     
 }
         

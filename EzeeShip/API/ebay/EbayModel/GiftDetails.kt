@@ -14,13 +14,13 @@ class GiftDetails {
  
     
     @JsonProperty(value = JsonConstants.MESSAGE)
-    val message: String? = null
+    var message: String? = null
     
     @JsonProperty(value = JsonConstants.RECIPIENTEMAIL)
-    val recipientEmail: String? = null
+    var recipientEmail: String? = null
     
     @JsonProperty(value = JsonConstants.SENDERNAME)
-    val senderName: String? = null
+    var senderName: String? = null
     
 }
         

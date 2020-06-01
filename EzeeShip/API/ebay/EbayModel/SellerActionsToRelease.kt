@@ -14,7 +14,7 @@ class SellerActionsToRelease {
  
     
     @JsonProperty(value = JsonConstants.SELLERACTIONTORELEASE)
-    val sellerActionToRelease: String? = null
+    var sellerActionToRelease: String? = null
     
 }
         

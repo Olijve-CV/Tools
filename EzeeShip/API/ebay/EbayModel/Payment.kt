@@ -14,24 +14,24 @@ class Payment {
  
     
     @JsonProperty(value = JsonConstants.AMOUNT)
-    val amount: Amount? = null
+    var amount: Amount? = null
     
     @JsonProperty(value = JsonConstants.PAYMENTDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val paymentDate: Date? = null
+    var paymentDate: Date? = null
     
     @JsonProperty(value = JsonConstants.PAYMENTHOLDS)
-    val paymentHoldList: List<PaymentHold>? = null
+    var paymentHoldList: List<PaymentHold>? = null
     
     @JsonProperty(value = JsonConstants.PAYMENTMETHOD)
-    val paymentMethod: String? = null
+    var paymentMethod: String? = null
     
     @JsonProperty(value = JsonConstants.PAYMENTREFERENCEID)
-    val paymentReferenceId: String? = null
+    var paymentReferenceId: String? = null
     
     @JsonProperty(value = JsonConstants.PAYMENTSTATUS)
-    val paymentStatus: String? = null
+    var paymentStatus: String? = null
     
 }
         

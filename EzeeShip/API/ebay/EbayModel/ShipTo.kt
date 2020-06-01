@@ -14,19 +14,19 @@ class ShipTo {
  
     
     @JsonProperty(value = JsonConstants.COMPANYNAME)
-    val companyName: String? = null
+    var companyName: String? = null
     
     @JsonProperty(value = JsonConstants.CONTACTADDRESS)
-    val contactAddress: ContactAddress? = null
+    var contactAddress: ContactAddress? = null
     
     @JsonProperty(value = JsonConstants.EMAIL)
-    val email: String? = null
+    var email: String? = null
     
     @JsonProperty(value = JsonConstants.FULLNAME)
-    val fullName: String? = null
+    var fullName: String? = null
     
     @JsonProperty(value = JsonConstants.PRIMARYPHONE)
-    val primaryPhone: PrimaryPhone? = null
+    var primaryPhone: PrimaryPhone? = null
     
 }
         

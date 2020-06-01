@@ -14,13 +14,13 @@ class AppliedPromotion {
  
     
     @JsonProperty(value = JsonConstants.DESCRIPTION)
-    val description: String? = null
+    var description: String? = null
     
     @JsonProperty(value = JsonConstants.DISCOUNTAMOUNT)
-    val discountAmount: DiscountAmount? = null
+    var discountAmount: DiscountAmount? = null
     
     @JsonProperty(value = JsonConstants.PROMOTIONID)
-    val promotionId: String? = null
+    var promotionId: String? = null
     
 }
         

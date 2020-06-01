@@ -1,5 +1,6 @@
 import ebayOrderData
 import ebayInventoryItem
+import bulkInventoryResponse
 
 DICT = 1
 LIST = 2
@@ -31,7 +32,7 @@ class DataObj(object):
 
     attr_template = """
     @JsonProperty(value = JsonConstants.%s)%s
-    val %s: %s? = null"""
+    var %s: %s? = null"""
     
     def __init__(self, name="", obj=None):
         self.name = name
@@ -246,5 +247,17 @@ def generateInventoryItem():
     gdTypeObj = {}
     gdConst = set()
     
+inventory_response_relative_path = "./EbayBulkInventoryResponse/"
+def generateInventoryItemResponse():
+    global gdTypeObj, gdConst
+    parseData("InventoryItemList", bulkInventoryResponse.data)
+    for name, obj in gdTypeObj.items():
+        generateCodeFileByObj(inventory_response_relative_path, obj)
+
+    generateConstFile(inventory_response_relative_path)
+    gdTypeObj = {}
+    gdConst = set()
+    
 generateOrder()
 generateInventoryItem()
+generateInventoryItemResponse()

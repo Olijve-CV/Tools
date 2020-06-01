@@ -14,37 +14,37 @@ class Product {
  
     
     @JsonProperty(value = JsonConstants.ASPECTS)
-    val aspectList: List<String>? = null
+    var aspectList: List<String>? = null
     
     @JsonProperty(value = JsonConstants.BRAND)
-    val brand: String? = null
+    var brand: String? = null
     
     @JsonProperty(value = JsonConstants.DESCRIPTION)
-    val description: String? = null
+    var description: String? = null
     
     @JsonProperty(value = JsonConstants.EAN)
-    val eanList: List<String>? = null
+    var eanList: List<String>? = null
     
     @JsonProperty(value = JsonConstants.EPID)
-    val epid: String? = null
+    var epid: String? = null
     
     @JsonProperty(value = JsonConstants.IMAGEURLS)
-    val imageUrlList: List<String>? = null
+    var imageUrlList: List<String>? = null
     
     @JsonProperty(value = JsonConstants.ISBN)
-    val isbnList: List<String>? = null
+    var isbnList: List<String>? = null
     
     @JsonProperty(value = JsonConstants.MPN)
-    val mpn: String? = null
+    var mpn: String? = null
     
     @JsonProperty(value = JsonConstants.SUBTITLE)
-    val subtitle: String? = null
+    var subtitle: String? = null
     
     @JsonProperty(value = JsonConstants.TITLE)
-    val title: String? = null
+    var title: String? = null
     
     @JsonProperty(value = JsonConstants.UPC)
-    val upcList: List<String>? = null
+    var upcList: List<String>? = null
     
 }
         

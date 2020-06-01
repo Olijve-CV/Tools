@@ -16,24 +16,24 @@ class CancelRequest {
     @JsonProperty(value = JsonConstants.CANCELCOMPLETEDDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val cancelCompletedDate: Date? = null
+    var cancelCompletedDate: Date? = null
     
     @JsonProperty(value = JsonConstants.CANCELINITIATOR)
-    val cancelInitiator: String? = null
+    var cancelInitiator: String? = null
     
     @JsonProperty(value = JsonConstants.CANCELREASON)
-    val cancelReason: String? = null
+    var cancelReason: String? = null
     
     @JsonProperty(value = JsonConstants.CANCELREQUESTEDDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val cancelRequestedDate: Date? = null
+    var cancelRequestedDate: Date? = null
     
     @JsonProperty(value = JsonConstants.CANCELREQUESTID)
-    val cancelRequestId: String? = null
+    var cancelRequestId: String? = null
     
     @JsonProperty(value = JsonConstants.CANCELREQUESTSTATE)
-    val cancelRequestState: String? = null
+    var cancelRequestState: String? = null
     
 }
         

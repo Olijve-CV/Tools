@@ -14,10 +14,10 @@ class Availability {
  
     
     @JsonProperty(value = JsonConstants.PICKUPATLOCATIONAVAILABILITY)
-    val pickupAtLocationAvailabilityList: List<PickupAtLocationAvailability>? = null
+    var pickupAtLocationAvailabilityList: List<PickupAtLocationAvailability>? = null
     
     @JsonProperty(value = JsonConstants.SHIPTOLOCATIONAVAILABILITY)
-    val shipToLocationAvailability: ShipToLocationAvailability? = null
+    var shipToLocationAvailability: ShipToLocationAvailability? = null
     
 }
         

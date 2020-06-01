@@ -14,67 +14,67 @@ class LineItem {
  
     
     @JsonProperty(value = JsonConstants.APPLIEDPROMOTIONS)
-    val appliedPromotionList: List<AppliedPromotion>? = null
+    var appliedPromotionList: List<AppliedPromotion>? = null
     
     @JsonProperty(value = JsonConstants.DELIVERYCOST)
-    val deliveryCost: DeliveryCost? = null
+    var deliveryCost: DeliveryCost? = null
     
     @JsonProperty(value = JsonConstants.DISCOUNTEDLINEITEMCOST)
-    val discountedLineItemCost: DiscountedLineItemCost? = null
+    var discountedLineItemCost: DiscountedLineItemCost? = null
     
     @JsonProperty(value = JsonConstants.EBAYCOLLECTANDREMITTAXES)
-    val ebayCollectAndRemitTaxList: List<EbayCollectAndRemitTax>? = null
+    var ebayCollectAndRemitTaxList: List<EbayCollectAndRemitTax>? = null
     
     @JsonProperty(value = JsonConstants.GIFTDETAILS)
-    val giftDetails: GiftDetails? = null
+    var giftDetails: GiftDetails? = null
     
     @JsonProperty(value = JsonConstants.LEGACYITEMID)
-    val legacyItemId: String? = null
+    var legacyItemId: String? = null
     
     @JsonProperty(value = JsonConstants.LEGACYVARIATIONID)
-    val legacyVariationId: String? = null
+    var legacyVariationId: String? = null
     
     @JsonProperty(value = JsonConstants.LINEITEMCOST)
-    val lineItemCost: LineItemCost? = null
+    var lineItemCost: LineItemCost? = null
     
     @JsonProperty(value = JsonConstants.LINEITEMFULFILLMENTINSTRUCTIONS)
-    val lineItemFulfillmentInstructions: LineItemFulfillmentInstructions? = null
+    var lineItemFulfillmentInstructions: LineItemFulfillmentInstructions? = null
     
     @JsonProperty(value = JsonConstants.LINEITEMFULFILLMENTSTATUS)
-    val lineItemFulfillmentStatus: String? = null
+    var lineItemFulfillmentStatus: String? = null
     
     @JsonProperty(value = JsonConstants.LINEITEMID)
-    val lineItemId: String? = null
+    var lineItemId: String? = null
     
     @JsonProperty(value = JsonConstants.LISTINGMARKETPLACEID)
-    val listingMarketplaceId: String? = null
+    var listingMarketplaceId: String? = null
     
     @JsonProperty(value = JsonConstants.PROPERTIES)
-    val properties: Properties? = null
+    var properties: Properties? = null
     
     @JsonProperty(value = JsonConstants.PURCHASEMARKETPLACEID)
-    val purchaseMarketplaceId: String? = null
+    var purchaseMarketplaceId: String? = null
     
     @JsonProperty(value = JsonConstants.QUANTITY)
-    val quantity: Int? = null
+    var quantity: Int? = null
     
     @JsonProperty(value = JsonConstants.REFUNDS)
-    val refundList: List<Refund>? = null
+    var refundList: List<Refund>? = null
     
     @JsonProperty(value = JsonConstants.SKU)
-    val sku: String? = null
+    var sku: String? = null
     
     @JsonProperty(value = JsonConstants.SOLDFORMAT)
-    val soldFormat: String? = null
+    var soldFormat: String? = null
     
     @JsonProperty(value = JsonConstants.TAXES)
-    val taxList: List<Tax>? = null
+    var taxList: List<Tax>? = null
     
     @JsonProperty(value = JsonConstants.TITLE)
-    val title: String? = null
+    var title: String? = null
     
     @JsonProperty(value = JsonConstants.TOTAL)
-    val total: Total? = null
+    var total: Total? = null
     
 }
         

@@ -14,16 +14,16 @@ class Adjustment {
  
     
     @JsonProperty(value = JsonConstants.CONVERTEDFROMCURRENCY)
-    val convertedFromCurrency: String? = null
+    var convertedFromCurrency: String? = null
     
     @JsonProperty(value = JsonConstants.CONVERTEDFROMVALUE)
-    val convertedFromValue: String? = null
+    var convertedFromValue: String? = null
     
     @JsonProperty(value = JsonConstants.CURRENCY)
-    val currency: String? = null
+    var currency: String? = null
     
     @JsonProperty(value = JsonConstants.VALUE)
-    val value: BigDecimal? = null
+    var value: BigDecimal? = null
     
 }
         

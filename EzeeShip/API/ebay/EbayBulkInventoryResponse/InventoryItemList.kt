@@ -10,14 +10,11 @@ import com.apex.util.FlexDateSerializer
 import java.util.Date
 
 @Data
-class Parameter {
+class InventoryItemList {
  
     
-    @JsonProperty(value = JsonConstants.NAME)
-    var name: String? = null
-    
-    @JsonProperty(value = JsonConstants.VALUE)
-    var value: BigDecimal? = null
+    @JsonProperty(value = JsonConstants.RESPONSES)
+    var responsList: List<Respons>? = null
     
 }
         

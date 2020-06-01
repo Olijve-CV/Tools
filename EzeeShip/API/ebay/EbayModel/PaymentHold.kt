@@ -16,24 +16,24 @@ class PaymentHold {
     @JsonProperty(value = JsonConstants.EXPECTEDRELEASEDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val expectedReleaseDate: Date? = null
+    var expectedReleaseDate: Date? = null
     
     @JsonProperty(value = JsonConstants.HOLDAMOUNT)
-    val holdAmount: HoldAmount? = null
+    var holdAmount: HoldAmount? = null
     
     @JsonProperty(value = JsonConstants.HOLDREASON)
-    val holdReason: String? = null
+    var holdReason: String? = null
     
     @JsonProperty(value = JsonConstants.HOLDSTATE)
-    val holdState: String? = null
+    var holdState: String? = null
     
     @JsonProperty(value = JsonConstants.RELEASEDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val releaseDate: Date? = null
+    var releaseDate: Date? = null
     
     @JsonProperty(value = JsonConstants.SELLERACTIONSTORELEASE)
-    val sellerActionsToReleaseList: List<SellerActionsToRelease>? = null
+    var sellerActionsToReleaseList: List<SellerActionsToRelease>? = null
     
 }
         

@@ -14,16 +14,16 @@ class ShippingStep {
  
     
     @JsonProperty(value = JsonConstants.SHIPPINGCARRIERCODE)
-    val shippingCarrierCode: String? = null
+    var shippingCarrierCode: String? = null
     
     @JsonProperty(value = JsonConstants.SHIPPINGSERVICECODE)
-    val shippingServiceCode: String? = null
+    var shippingServiceCode: String? = null
     
     @JsonProperty(value = JsonConstants.SHIPTO)
-    val shipTo: ShipTo? = null
+    var shipTo: ShipTo? = null
     
     @JsonProperty(value = JsonConstants.SHIPTOREFERENCEID)
-    val shipToReferenceId: String? = null
+    var shipToReferenceId: String? = null
     
 }
         

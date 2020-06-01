@@ -14,13 +14,13 @@ class EbayCollectAndRemitTax {
  
     
     @JsonProperty(value = JsonConstants.AMOUNT)
-    val amount: Amount? = null
+    var amount: Amount? = null
     
     @JsonProperty(value = JsonConstants.TAXTYPE)
-    val taxType: String? = null
+    var taxType: String? = null
     
     @JsonProperty(value = JsonConstants.COLLECTIONMETHOD)
-    val collectionMethod: String? = null
+    var collectionMethod: String? = null
     
 }
         

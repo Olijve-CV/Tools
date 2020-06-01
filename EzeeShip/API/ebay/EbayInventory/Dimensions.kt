@@ -14,16 +14,16 @@ class Dimensions {
  
     
     @JsonProperty(value = JsonConstants.HEIGHT)
-    val height: Int? = null
+    var height: Int? = null
     
     @JsonProperty(value = JsonConstants.LENGTH)
-    val length: Int? = null
+    var length: Int? = null
     
     @JsonProperty(value = JsonConstants.UNIT)
-    val unit: String? = null
+    var unit: String? = null
     
     @JsonProperty(value = JsonConstants.WIDTH)
-    val width: Int? = null
+    var width: Int? = null
     
 }
         

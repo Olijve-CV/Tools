@@ -14,28 +14,28 @@ class LineItemFulfillmentInstructions {
  
     
     @JsonProperty(value = JsonConstants.DESTINATIONTIMEZONE)
-    val destinationTimeZone: String? = null
+    var destinationTimeZone: String? = null
     
     @JsonProperty(value = JsonConstants.GUARANTEEDDELIVERY)
-    val guaranteedDelivery: Boolean? = null
+    var guaranteedDelivery: Boolean? = null
     
     @JsonProperty(value = JsonConstants.MAXESTIMATEDDELIVERYDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val maxEstimatedDeliveryDate: Date? = null
+    var maxEstimatedDeliveryDate: Date? = null
     
     @JsonProperty(value = JsonConstants.MINESTIMATEDDELIVERYDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val minEstimatedDeliveryDate: Date? = null
+    var minEstimatedDeliveryDate: Date? = null
     
     @JsonProperty(value = JsonConstants.SHIPBYDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val shipByDate: Date? = null
+    var shipByDate: Date? = null
     
     @JsonProperty(value = JsonConstants.SOURCETIMEZONE)
-    val sourceTimeZone: String? = null
+    var sourceTimeZone: String? = null
     
 }
         

@@ -14,16 +14,16 @@ class PickupAtLocationAvailability {
  
     
     @JsonProperty(value = JsonConstants.AVAILABILITYTYPE)
-    val availabilityType: String? = null
+    var availabilityType: String? = null
     
     @JsonProperty(value = JsonConstants.FULFILLMENTTIME)
-    val fulfillmentTime: FulfillmentTime? = null
+    var fulfillmentTime: FulfillmentTime? = null
     
     @JsonProperty(value = JsonConstants.MERCHANTLOCATIONKEY)
-    val merchantLocationKey: String? = null
+    var merchantLocationKey: String? = null
     
     @JsonProperty(value = JsonConstants.QUANTITY)
-    val quantity: Int? = null
+    var quantity: Int? = null
     
 }
         

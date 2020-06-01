@@ -14,32 +14,32 @@ class FulfillmentStartInstruction {
  
     
     @JsonProperty(value = JsonConstants.DESTINATIONTIMEZONE)
-    val destinationTimeZone: String? = null
+    var destinationTimeZone: String? = null
     
     @JsonProperty(value = JsonConstants.EBAYSUPPORTEDFULFILLMENT)
-    val ebaySupportedFulfillment: Boolean? = null
+    var ebaySupportedFulfillment: Boolean? = null
     
     @JsonProperty(value = JsonConstants.FINALDESTINATIONADDRESS)
-    val finalDestinationAddress: FinalDestinationAddress? = null
+    var finalDestinationAddress: FinalDestinationAddress? = null
     
     @JsonProperty(value = JsonConstants.FULFILLMENTINSTRUCTIONSTYPE)
-    val fulfillmentInstructionsType: String? = null
+    var fulfillmentInstructionsType: String? = null
     
     @JsonProperty(value = JsonConstants.MAXESTIMATEDDELIVERYDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val maxEstimatedDeliveryDate: Date? = null
+    var maxEstimatedDeliveryDate: Date? = null
     
     @JsonProperty(value = JsonConstants.MINESTIMATEDDELIVERYDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val minEstimatedDeliveryDate: Date? = null
+    var minEstimatedDeliveryDate: Date? = null
     
     @JsonProperty(value = JsonConstants.PICKUPSTEP)
-    val pickupStep: PickupStep? = null
+    var pickupStep: PickupStep? = null
     
     @JsonProperty(value = JsonConstants.SHIPPINGSTEP)
-    val shippingStep: ShippingStep? = null
+    var shippingStep: ShippingStep? = null
     
 }
         

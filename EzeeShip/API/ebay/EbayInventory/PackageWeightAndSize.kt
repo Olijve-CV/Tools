@@ -14,13 +14,13 @@ class PackageWeightAndSize {
  
     
     @JsonProperty(value = JsonConstants.DIMENSIONS)
-    val dimensions: Dimensions? = null
+    var dimensions: Dimensions? = null
     
     @JsonProperty(value = JsonConstants.PACKAGETYPE)
-    val packageType: String? = null
+    var packageType: String? = null
     
     @JsonProperty(value = JsonConstants.WEIGHT)
-    val weight: Weight? = null
+    var weight: Weight? = null
     
 }
         

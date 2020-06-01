@@ -14,59 +14,59 @@ class Order {
  
     
     @JsonProperty(value = JsonConstants.BUYER)
-    val buyer: Buyer? = null
+    var buyer: Buyer? = null
     
     @JsonProperty(value = JsonConstants.BUYERCHECKOUTNOTES)
-    val buyerCheckoutNotes: String? = null
+    var buyerCheckoutNotes: String? = null
     
     @JsonProperty(value = JsonConstants.CANCELSTATUS)
-    val cancelStatus: CancelStatus? = null
+    var cancelStatus: CancelStatus? = null
     
     @JsonProperty(value = JsonConstants.CREATIONDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val creationDate: Date? = null
+    var creationDate: Date? = null
     
     @JsonProperty(value = JsonConstants.EBAYCOLLECTANDREMITTAX)
-    val ebayCollectAndRemitTax: Boolean? = null
+    var ebayCollectAndRemitTax: Boolean? = null
     
     @JsonProperty(value = JsonConstants.FULFILLMENTHREFS)
-    val fulfillmentHrefList: List<String>? = null
+    var fulfillmentHrefList: List<String>? = null
     
     @JsonProperty(value = JsonConstants.FULFILLMENTSTARTINSTRUCTIONS)
-    val fulfillmentStartInstructionList: List<FulfillmentStartInstruction>? = null
+    var fulfillmentStartInstructionList: List<FulfillmentStartInstruction>? = null
     
     @JsonProperty(value = JsonConstants.LASTMODIFIEDDATE)
     @JsonDeserialize(using = FlexDateDeserializer::class)
     @JsonSerialize(using = FlexDateSerializer::class)
-    val lastModifiedDate: Date? = null
+    var lastModifiedDate: Date? = null
     
     @JsonProperty(value = JsonConstants.LEGACYORDERID)
-    val legacyOrderId: String? = null
+    var legacyOrderId: String? = null
     
     @JsonProperty(value = JsonConstants.LINEITEMS)
-    val lineItemList: List<LineItem>? = null
+    var lineItemList: List<LineItem>? = null
     
     @JsonProperty(value = JsonConstants.ORDERFULFILLMENTSTATUS)
-    val orderFulfillmentStatus: String? = null
+    var orderFulfillmentStatus: String? = null
     
     @JsonProperty(value = JsonConstants.ORDERID)
-    val orderId: String? = null
+    var orderId: String? = null
     
     @JsonProperty(value = JsonConstants.ORDERPAYMENTSTATUS)
-    val orderPaymentStatus: String? = null
+    var orderPaymentStatus: String? = null
     
     @JsonProperty(value = JsonConstants.PAYMENTSUMMARY)
-    val paymentSummary: PaymentSummary? = null
+    var paymentSummary: PaymentSummary? = null
     
     @JsonProperty(value = JsonConstants.PRICINGSUMMARY)
-    val pricingSummary: PricingSummary? = null
+    var pricingSummary: PricingSummary? = null
     
     @JsonProperty(value = JsonConstants.SALESRECORDREFERENCE)
-    val salesRecordReference: String? = null
+    var salesRecordReference: String? = null
     
     @JsonProperty(value = JsonConstants.SELLERID)
-    val sellerId: String? = null
+    var sellerId: String? = null
     
 }
         

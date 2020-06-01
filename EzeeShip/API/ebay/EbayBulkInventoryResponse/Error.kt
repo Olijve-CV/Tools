@@ -10,7 +10,7 @@ import com.apex.util.FlexDateSerializer
 import java.util.Date
 
 @Data
-class Warning {
+class Error {
  
     
     @JsonProperty(value = JsonConstants.CATEGORY)

@@ -14,7 +14,7 @@ class Tax {
  
     
     @JsonProperty(value = JsonConstants.AMOUNT)
-    val amount: Amount? = null
+    var amount: Amount? = null
     
 }
         

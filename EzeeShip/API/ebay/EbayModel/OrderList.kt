@@ -14,28 +14,28 @@ class OrderList {
  
     
     @JsonProperty(value = JsonConstants.HREF)
-    val href: String? = null
+    var href: String? = null
     
     @JsonProperty(value = JsonConstants.LIMIT)
-    val limit: Int? = null
+    var limit: Int? = null
     
     @JsonProperty(value = JsonConstants.NEXT)
-    val next: String? = null
+    var next: String? = null
     
     @JsonProperty(value = JsonConstants.OFFSET)
-    val offset: Int? = null
+    var offset: Int? = null
     
     @JsonProperty(value = JsonConstants.ORDERS)
-    val orderList: List<Order>? = null
+    var orderList: List<Order>? = null
     
     @JsonProperty(value = JsonConstants.PREV)
-    val prev: String? = null
+    var prev: String? = null
     
     @JsonProperty(value = JsonConstants.TOTAL)
-    val total: Int? = null
+    var total: Int? = null
     
     @JsonProperty(value = JsonConstants.WARNINGS)
-    val warningList: List<Warning>? = null
+    var warningList: List<Warning>? = null
     
 }
         

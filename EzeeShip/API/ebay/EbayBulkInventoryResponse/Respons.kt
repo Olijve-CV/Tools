@@ -10,29 +10,23 @@ import com.apex.util.FlexDateSerializer
 import java.util.Date
 
 @Data
-class Request {
+class Respons {
  
     
-    @JsonProperty(value = JsonConstants.AVAILABILITY)
-    var availability: Availability? = null
-    
-    @JsonProperty(value = JsonConstants.CONDITION)
-    var condition: String? = null
-    
-    @JsonProperty(value = JsonConstants.CONDITIONDESCRIPTION)
-    var conditionDescription: String? = null
+    @JsonProperty(value = JsonConstants.ERRORS)
+    var errorList: List<Error>? = null
     
     @JsonProperty(value = JsonConstants.LOCALE)
     var locale: String? = null
     
-    @JsonProperty(value = JsonConstants.PACKAGEWEIGHTANDSIZE)
-    var packageWeightAndSize: PackageWeightAndSize? = null
-    
-    @JsonProperty(value = JsonConstants.PRODUCT)
-    var product: Product? = null
-    
     @JsonProperty(value = JsonConstants.SKU)
     var sku: String? = null
+    
+    @JsonProperty(value = JsonConstants.STATUSCODE)
+    var statusCode: Int? = null
+    
+    @JsonProperty(value = JsonConstants.WARNINGS)
+    var warningList: List<Warning>? = null
     
 }
         

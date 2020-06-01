@@ -14,7 +14,7 @@ class InventoryItemList {
  
     
     @JsonProperty(value = JsonConstants.REQUESTS)
-    val requestList: List<Request>? = null
+    var requestList: List<Request>? = null
     
 }
         
