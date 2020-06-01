@@ -1,6 +1,5 @@
-import ebayOrderData
-import ebayInventoryItem
-import bulkInventoryResponse
+#-*-coding:utf-8-*-
+import ProductVariant
 
 DICT = 1
 LIST = 2
@@ -14,7 +13,7 @@ def checkObjType(obj):
         return DICT
     elif isinstance(obj, list):
         return LIST
-    elif isinstance(obj, str):
+    elif isinstance(obj, str) or isinstance(obj, type("")):
         if " : [" in obj:
             return ENUM
         elif "boolean" == obj:
@@ -23,7 +22,13 @@ def checkObjType(obj):
             return INT
         elif "string" == obj or "" == obj:
             return STRING
-    raise Exception("None Type of obj: " + str(obj))
+        else:
+            return STRING
+    elif isinstance(obj, type(1)):
+        return INT
+    elif isinstance(obj, type(1.0)):
+        return BOOLEAN
+    raise Exception("None Type of obj: " + str(obj) + "|" + str(type(obj)))
 
 gdTypeObj = {}
 gdConst = set()
@@ -189,12 +194,12 @@ def parseData(name, obj):
     else:
         raise Exception("iType lost: %s"%iType)
 
-def generateCodeFileByObj(path, obj):
+def generateCodeFileByObj(path, obj, submodel = ""):
 
     name = obj.name
     writeFile = open("%s%s.kt"%(path, name[0].upper() + name[1:]), "w")
     # 文件头
-    writeFile.writelines('''package com.apex.ebay.model
+    writeFile.writelines('''package com.apex.shopify.domain{submodel}
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import lombok.Data
@@ -204,7 +209,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize
 import com.apex.util.FlexDateDeserializer
 import com.apex.util.FlexDateSerializer
 import java.util.Date
-''')
+'''.format(submodel=submodel))
     writeFile.writelines(obj.decodeToKotlinObj())
     writeFile.close()
     
@@ -214,50 +219,26 @@ def GetConstText():
     return "\r\n\t".join(constLst)
 
 
-def generateConstFile(path):
+def generateConstFile(path, submodel=""):
     jsonFile = open("%s%s.kt"%(path, "JsonConstants"), "w")
-    jsonFile.writelines("""package com.apex.ebay.model
+    jsonFile.writelines("""package com.apex.ebay.domain%s
 
 object JsonConstants {
 
     %s
     
-}"""%GetConstText())
+}"""%(submodel, GetConstText()))
     jsonFile.close()
     
-order_relative_path = "./EbayModel/"    
-def generateOrder():
+product_path = "./Model/Product/"
+def generateProductVariant():
     global gdTypeObj, gdConst
-    parseData("OrderList", ebayOrderData.OrderList)
+    parseData("InventoryItemList", ProductVariant.data)
     for name, obj in gdTypeObj.items():
-        generateCodeFileByObj(order_relative_path, obj)
+        generateCodeFileByObj(product_path, obj, submodel=".product")
 
-    generateConstFile(order_relative_path)
+    generateConstFile(product_path, submodel=".product")
     gdTypeObj = {}
     gdConst = set()
-    
-inventory_relative_path = "./EbayInventory/"
-def generateInventoryItem():
-    global gdTypeObj, gdConst
-    parseData("InventoryItemList", ebayInventoryItem.requestList)
-    for name, obj in gdTypeObj.items():
-        generateCodeFileByObj(inventory_relative_path, obj)
 
-    generateConstFile(inventory_relative_path)
-    gdTypeObj = {}
-    gdConst = set()
-    
-inventory_response_relative_path = "./EbayBulkInventoryResponse/"
-def generateInventoryItemResponse():
-    global gdTypeObj, gdConst
-    parseData("InventoryItemList", bulkInventoryResponse.data)
-    for name, obj in gdTypeObj.items():
-        generateCodeFileByObj(inventory_response_relative_path, obj)
-
-    generateConstFile(inventory_response_relative_path)
-    gdTypeObj = {}
-    gdConst = set()
-    
-generateOrder()
-generateInventoryItem()
-generateInventoryItemResponse()
+generateProductVariant()
