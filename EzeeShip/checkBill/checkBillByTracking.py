@@ -3,21 +3,22 @@
 import requests
 import json
 import time
+import ssl
 
-_url = "http://fahuolou.com/api/ezeeship/adminPostage/list"
+_url = "https://fahuolou.com/api/ezeeship/admin/label/list"
 header = {"user-agent": "my-app/0.0.1"}
 cookie = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36",
-          "Cookies": "_ga=GA1.1.443939740.1593402303; _gid=GA1.1.1760325882.1593402303; __zlcmid=ywjFGzgJlCorPc; ezeeship=f3b68bbb-4a5b-4a46-bd32-fb63c9331d3c"
+          "Cookies": "_fbp=fb.1.1600825283742.974860226; _ga=GA1.2.354458282.1600825293; __zlcmid=10KjSLFOFKllt1u; _gid=GA1.2.1212765545.1602481766; ezeeship=a8488c6d-8dea-428c-bf23-fd6411f01007; _gat_gtag_UA_148418458_1=1"
           }
 g_params = {
     "curPageNo":1,
-    "pageSize":20,
-    "status":1
+    "pageSize":20
 }
 def requestTrackingUrl(trackingnumber):
     global g_params
-    g_params["trackingNumber"] = trackingnumber.strip()
-    r1 = requests.get(_url, params=g_params, headers=header, cookies=cookie, timeout=10)      # 带参数的get请求
+    ssl._create_default_https_context = ssl._create_unverified_context
+    g_params["trackingNo"] = trackingnumber.strip()
+    r1 = requests.get(_url, params=g_params, headers=header, cookies=cookie, timeout=10, verify=False)      # 带参数的get请求
     # print(r1)
     return r1.json()
 
@@ -30,12 +31,11 @@ def readSrc(path):
 dChecked = {}
 
 def checkLines(filename):
-    try:
-        roldfile = open(f"./resource/res_{filename}", "r")
-        oldIndx = len(roldfile.readlines())
-        roldfile.close()
-    except:
-        oldIndx = 0
+
+    roldfile = open(f"./resource/res_{filename}", "r", encoding="utf-8")
+    oldIndx = len(roldfile.readlines())
+    roldfile.close()
+
     writeFile = open(f"./resource/res_{filename}", mode="a+", encoding="utf-8")
     path = f"./resource/{filename}"
     lLines = readSrc(path)
@@ -75,5 +75,5 @@ def checkLines(filename):
             writeFile.flush()
             time.sleep(1)
 
-filename = "fedex-eda-0706.txt"
+filename = "fedex-07-24.txt"
 checkLines(filename)
