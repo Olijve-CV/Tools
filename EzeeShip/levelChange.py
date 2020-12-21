@@ -587,7 +587,7 @@ import ssl
 _url = "https://fahuolou.com/api/ezeeship/admin/label/list"
 header = {"user-agent": "my-app/0.0.1", "content-type":"application/json;charset=UTF-8"}
 cookie = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36",
-          "Cookies": "_fbp=fb.1.1600825283742.974860226; _ga=GA1.2.354458282.1600825293; __zlcmid=10KjSLFOFKllt1u; _gid=GA1.2.1212765545.1602481766; ezeeship=8ba12d4b-57b9-4fc0-9a77-947a4774329a; _gat_gtag_UA_148418458_1=1"
+          "Cookies": "_fbp=fb.1.1600825283742.974860226; _ga=GA1.2.354458282.1600825293; __zlcmid=10KjSLFOFKllt1u; _gid=GA1.2.1212765545.1602481766; ezeeship=1c5a42a0-1435-4247-b1f1-decdb4a714b6; _gat_gtag_UA_148418458_1=1"
           }
 g_params = {
     "curPageNo":1,
@@ -602,13 +602,19 @@ def queryLevelDiscount(userId):
     return r1.json()
 
 default_change_level = 6
-def createLevelChangePostBody(userId,userOldLevel,userDiscount):
+def createLevelChangePostBody(user,userDiscount):
+    userOldLevel = user.levelId
+    userId = user.id
     discountChange = []
     for lis in userDiscount:
+        if (not user.closeUps and lis["carrierName"] == "UPS"):
+            continue
+        if (not user.closeFedex and lis["carrierName"] == "Fedex"):
+            continue
         for li in lis["userCarrierServiceDiscountVoList"]:
-            if (not li["id"]):
-                continue
-            if (li["levelId"] == 6):
+            # if (not li["id"]):
+            #     continue
+            if (li["levelId"] == default_change_level):
                 continue
             discountChange.append({
                 "oldLevelId":li["levelId"],
@@ -637,12 +643,12 @@ def createLevelChangePostBody(userId,userOldLevel,userDiscount):
             },)
     return {
         "type":2,
-        "userId":userId,
+        "userId":user.id,
         "salerUserId":27,
-        "userLevel":default_change_level,
+        "userLevel":user.levelId,
         "userCarrierServiceDiscountList":discountChange,
         "applicantType":2,
-        "note": "auto apply discount by xiaofei"
+        "note": "auto apply discount by xiaofei with ups_%s and fedex_%s" %(user.closeUps, user.closeFedex)
         # "upsGroundDim":139,
         # "upsExpressDim":139,
         # "fedexGroundDim":139,
@@ -650,16 +656,17 @@ def createLevelChangePostBody(userId,userOldLevel,userDiscount):
         # "rate":0
     }
 
-def saveLevelChangeSalerApv(id,userOldLevel, userDiscount):
+def saveLevelChangeSalerApv(user, userDiscount):
     url = "https://fahuolou.com/api/ezeeship/user/saveLevelChangAdminApp"
     ssl._create_default_https_context = ssl._create_unverified_context
-    body = createLevelChangePostBody(int(id),userOldLevel, userDiscount)
+    body = createLevelChangePostBody(user, userDiscount)
     r1 = requests.post(url,json=body, headers=header, cookies=cookie, timeout=10, verify=False)      # 带参数的get请求
     # print(r1)
     return r1.json()
 
+import userInfo
 def commit():
-    beginEmail = "jessie@kkgiftscrafts.com"  #"lucy9312@qq.com"
+    beginEmail = "umtech.amazon@gmail.com"  #"lucy9312@qq.com"
     for userinfo in changeUsers.strip().split("\n"):
         if (not userinfo): continue
         id, email, levelId = userinfo.split("\t")
@@ -670,8 +677,12 @@ def commit():
         print("deal user:", id, email, levelId)
         userDiscount = queryLevelDiscount(id)
         # print(type(userDiscount), userDiscount)
-        result = saveLevelChangeSalerApv(id,int(levelId), userDiscount)
+        user = userInfo.gUsers[id]
+        user.setLevelId(levelId)
+        result = saveLevelChangeSalerApv(user, userDiscount)
         print(id, result)
+        break
+
 
 def getApplicants():
     url = "https://fahuolou.com/api/ezeeship/user/queryLevelChangeSaler?status=1&curPageNo=1&pageSize=600"
@@ -714,7 +725,7 @@ def reject(applicant):
 def rejectAll():
     applicants = getApplicants()
     for applicant in applicants["datas"]:
-        if applicant["note"].startswith("auto apply discount by xiaofei"):
+        if applicant["note"] and applicant["note"].startswith("auto apply discount by xiaofei"):
             reject(applicant)
             # break;
 
