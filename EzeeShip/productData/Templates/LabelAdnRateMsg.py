@@ -6,4 +6,4 @@ gsTemplate = '''
     {labelCvts}
   getRateEMCvt:
     {getRateCvts}
-'''
+'''.strip()

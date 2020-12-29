@@ -1,0 +1,8 @@
+error-code:
+  error-msg-map:
+    1:
+      message: "testCreate"
+      zh-message: "测试"
+    2:
+      message: "testRate"
+      zh-message: "测试我rate"
