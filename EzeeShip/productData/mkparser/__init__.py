@@ -17,6 +17,13 @@ def mkLabelAndRateMsg(path):
     wf.close()
 
 def mkCvts(sheet):
-    return "test2"
+    lList = []
+    for row in range(1, sheet.nrows):
+        lValues = sheet.row_values(row)
+        print(row, lValues, len(lValues))
+        no, originMsgPrefix, showMsg, showMsgZh = lValues
+        lList.append(f'''- originMsgPrefix: "{originMsgPrefix}"
+      showMsg: "{showMsg}"''')
+    return "\n    ".join(lList)
 
 
