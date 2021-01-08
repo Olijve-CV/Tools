@@ -28,7 +28,7 @@ def genSurchargeHistorySql(file, wfileName, updateTime):
     sourceFile = os.path.join(os.path.curdir , 'resource', 'surcharge', file)
     excelfile = xlrd.open_workbook(sourceFile)
     sheet = excelfile.sheet_by_name("toEdit")
-    wf = open(os.path.join(os.path.curdir,'result',wfileName), mode='w', encoding='utf-8')
+    wf = open(os.path.join(os.path.curdir, 'result', 'srucharge', wfileName), mode='w', encoding='utf-8')
     for row in range(1, sheet.nrows):
         lValue = sheet.row_values(row)
         account, surchargeName, service, typeName, contractPrice, userPrice, publishRate, printCode,\
