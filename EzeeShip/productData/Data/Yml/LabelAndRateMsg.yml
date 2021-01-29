@@ -54,6 +54,7 @@ pdfunc:
       showMsg: "Carrier's interface abnormal. Please check the filled information."
     - originMsgPrefix: "Request exception ! Unexpected EOF; was expecting a close tag for element <MissingData>\n at [row,col {unknown-source}]: [1,4000]"
       showMsg: "Carrier's interface abnormal. Please check the filled information."
+  getRateEMCvt:
     - originMsgPrefix: "RecipientAddressLine length should not exceed 35"
       showMsg: "Recipient Address Line length should not exceed 35."
     - originMsgPrefix: "RecipientCompany length should not exceed 30"
@@ -66,4 +67,3 @@ pdfunc:
       showMsg: "Sender Name length should not exceed 30."
     - originMsgPrefix: "The destination location is invalid. Please check the data."
       showMsg: "The destination does not support the service. Please change to other services."
-  getRateEMCvt:
